@@ -142,6 +142,12 @@ abstract public class User {
 
         if (checkingForCommands(received)) return;
 
+        //show user message
+        if (this.getType().equals(userTypes[0]) ||
+            this.getType().equals(userTypes[1]) && this.getStatus().equals(userStatuses[2])){
+                this.SendMsgToSelf(received, this.getName());
+        }
+
         //client change status on waiting
         if (this.Type.equals(userTypes[0]) && this.Status.equals(userStatuses[1])) {
 //                    System.out.println("look");

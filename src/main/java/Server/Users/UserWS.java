@@ -35,7 +35,9 @@ public class UserWS extends User{
     public void SendMsgToSelf(String msg, String from) {
         Map map = new HashMap<Integer, String>();
         map.put(0 , this.getName());
-        map.put(1 , Interlocutor.getName());
+        if (Interlocutor != null){
+            map.put(1 , Interlocutor.getName());
+        }
         session.send(
                 new JSONObject()
                         .put("userMessage", createHtmlMessageFromSender(from, msg))
@@ -72,6 +74,7 @@ public class UserWS extends User{
             System.out.println(this.getName() + " leave");
             disconnectingInterlocutors();
             this.SendMsgToSelf("you leave chat with " + Interlocutor.getName(), "Server");
+            Interlocutor.SendMsgToSelf( this.getName() + " leave chat with you", "Server");
             clientTimeLog(this.getName() + " leave chat with " + Interlocutor.getName());
             return true;
         }

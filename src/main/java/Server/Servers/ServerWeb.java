@@ -23,9 +23,10 @@ public class ServerWeb extends Thread {
                     ws.onConnect(session -> {
                         timeLog("New web user request received on session: " + session);
                         int i = getI();
-                        addUser(session.hashCode(), new UserWS(i,"WebSocket",session));
+                        addUser(session.hashCode(), new UserWS(i,"WebSocket", session));
                     });
                     ws.onClose((session, status, message) -> {
+                        System.out.println("close");
                         removeUser(session.hashCode());
                     });
                     ws.onMessage((session, message) -> {
@@ -33,6 +34,7 @@ public class ServerWeb extends Thread {
                         System.out.println(user.getName() + " " + message);
                         user.runMethod(message);
                     });
+                    ws.onError((wsSession, throwable) -> System.out.println(throwable));
                 })
                 .start();
     }

@@ -95,6 +95,7 @@ public class UserS extends User implements Runnable{
         if (received.trim().indexOf("leave") == 1 && this.Status.equals(userStatuses[2])) {
             disconnectingInterlocutors();
             this.SendMsgToSelf("you leave chat with " + Interlocutor.getName(), "Server");
+            Interlocutor.SendMsgToSelf( this.getName() + " leave chat with you", "Server");
             clientTimeLog(this.getName() + " leave chat with " + Interlocutor.getName());
             return true;
         }

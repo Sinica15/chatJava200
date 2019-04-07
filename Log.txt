@@ -1,35 +1,98 @@
-[2019/04/07 16:58:13] Server powered on!
-[2019/04/07 16:58:13] Web server started
-[2019/04/07 16:58:13] Server commands started
-[2019/04/07 16:58:13] Console server started
-[2019/04/07 16:58:18] New web user request received on session: io.javalin.websocket.WsSession@4643f761
-[2019/04/07 16:58:18] undef_1178859361 changed status to not logined
-[2019/04/07 16:58:26] aaaname changed status to logined
-[2019/04/07 16:58:30] aaaname changed status to logined
-[2019/04/07 16:58:30] aaaname exit
-[2019/04/07 16:59:26] New web user request received on session: io.javalin.websocket.WsSession@1d585696
-[2019/04/07 16:59:26] undef_492328598 changed status to not logined
-[2019/04/07 16:59:40] New web user request received on session: io.javalin.websocket.WsSession@34e4e813
-[2019/04/07 16:59:40] undef_887416851 changed status to not logined
-[2019/04/07 16:59:47] New web user request received on session: io.javalin.websocket.WsSession@71ae17e2
-[2019/04/07 16:59:47] undef_1907234786 changed status to not logined
-[2019/04/07 17:00:16] ClientA changed status to logined
-[2019/04/07 17:01:13] AgentB changed status to waiting
-[2019/04/07 17:01:44] ClientA changed status to in conversation
-[2019/04/07 17:01:44] AgentB changed status to in conversation
-[2019/04/07 17:01:44] ClientA in chat with AgentB
-[2019/04/07 17:01:44] AgentB to ClientA aaaa
-[2019/04/07 17:01:44] AgentB to ClientA bbbb
-[2019/04/07 17:01:44] ClientA to AgentB fff
-[2019/04/07 17:02:04] AgentB to ClientA aaa
-[2019/04/07 17:03:46] ClientA to AgentB sss
-[2019/04/07 17:03:55] ClientA changed status to logined
-[2019/04/07 17:03:55] AgentB changed status to waiting
-[2019/04/07 17:03:55] ClientA leave chat with AgentB
-[2019/04/07 17:04:09] ClientA changed status to in conversation
-[2019/04/07 17:04:09] AgentB changed status to in conversation
-[2019/04/07 17:04:09] ClientA in chat with AgentB
-[2019/04/07 17:04:09] ClientA to AgentB sss
-[2019/04/07 17:04:18] ClientA changed status to logined
-[2019/04/07 17:04:18] AgentB changed status to waiting
-[2019/04/07 17:04:18] ClientA exit
+[2019/04/07 22:19:25] Server powered on!
+[2019/04/07 22:19:25] Web server started
+[2019/04/07 22:19:25] Server commands started
+[2019/04/07 22:19:25] Console server started
+[2019/04/07 22:19:41] New user request received : Socket[addr=/127.0.0.1,port=34436,localport=1234]
+[2019/04/07 22:19:42] New user request received : Socket[addr=/127.0.0.1,port=34438,localport=1234]
+[2019/04/07 22:20:05] New web user request received on session: io.javalin.websocket.WsSession@68e37f09
+[2019/04/07 22:20:05] undef_1759739657 changed status to not logined
+[2019/04/07 22:20:07] New web user request received on session: io.javalin.websocket.WsSession@257cd8fb
+[2019/04/07 22:20:07] undef_628939003 changed status to not logined
+[2019/04/07 22:20:53] Gosha changed status to logined
+[2019/04/07 22:21:10] cooper registered
+[2019/04/07 22:21:10] cooper changed status to waiting
+[2019/04/07 22:21:10] cooper changed status to in conversation
+[2019/04/07 22:21:10] Gosha changed status to in conversation
+[2019/04/07 22:21:10] cooper in chat with Gosha
+[2019/04/07 22:21:10] cooper to Gosha ssss
+[2019/04/07 22:21:10] cooper to Gosha aaa
+[2019/04/07 22:21:10] cooper to Gosha ww
+[2019/04/07 22:21:10] cooper to Gosha qq
+[2019/04/07 22:21:26] cooper to Gosha gg
+[2019/04/07 22:21:39] jopa registered
+[2019/04/07 22:21:39] jopa changed status to logined
+[2019/04/07 22:22:02] Hopper changed status to waiting
+[2019/04/07 22:22:16] jopa changed status to in conversation
+[2019/04/07 22:22:16] Hopper changed status to in conversation
+[2019/04/07 22:22:16] jopa in chat with Hopper
+[2019/04/07 22:22:16] Hopper to jopa sss
+[2019/04/07 22:22:16] Hopper to jopa fff
+[2019/04/07 22:22:16] Hopper to jopa cccc
+[2019/04/07 22:22:16] Hopper to jopa aaaa
+[2019/04/07 22:22:16] jopa to Hopper hh
+[2019/04/07 22:23:08] jopa to Hopper kkk
+[2019/04/07 22:23:11] jopa to Hopper iuyg
+[2019/04/07 22:23:22] Hopper changed status to waiting
+[2019/04/07 22:23:22] jopa changed status to logined
+[2019/04/07 22:23:22] Hopper leave chat with jopa
+[2019/04/07 22:23:30] cooper changed status to waiting
+[2019/04/07 22:23:30] Gosha changed status to logined
+[2019/04/07 22:23:30] cooper disconnected
+[2019/04/07 22:23:31] jopa changed status to logined
+[2019/04/07 22:23:31] Hopper changed status to waiting
+[2019/04/07 22:23:31] jopa disconnected
+[2019/04/07 22:23:43] Gosha changed status to logined
+[2019/04/07 22:23:43] cooper changed status to waiting
+[2019/04/07 22:23:43] Gosha exit
+[2019/04/07 22:31:32] New user request received : Socket[addr=/127.0.0.1,port=40198,localport=1234]
+[2019/04/07 22:31:32] New user request received : Socket[addr=/127.0.0.1,port=40200,localport=1234]
+[2019/04/07 22:31:59] kkkk registered
+[2019/04/07 22:31:59] kkkk changed status to logined
+[2019/04/07 22:32:13] jopa registered
+[2019/04/07 22:32:13] jopa changed status to waiting
+[2019/04/07 22:32:13] jopa changed status to in conversation
+[2019/04/07 22:32:13] kkkk changed status to in conversation
+[2019/04/07 22:32:13] jopa in chat with kkkk
+[2019/04/07 22:32:13] jopa to kkkk kkklll
+[2019/04/07 22:32:13] jopa to kkkk kjgjhkj
+[2019/04/07 22:32:28] kkkk changed status to logined
+[2019/04/07 22:32:28] jopa changed status to waiting
+[2019/04/07 22:32:28] kkkk disconnected
+[2019/04/07 22:32:37] New web user request received on session: io.javalin.websocket.WsSession@db0283f
+[2019/04/07 22:32:37] undef_229648447 changed status to not logined
+[2019/04/07 22:32:47] hooper changed status to logined
+[2019/04/07 22:32:59] hooper changed status to in conversation
+[2019/04/07 22:32:59] jopa changed status to in conversation
+[2019/04/07 22:32:59] hooper in chat with jopa
+[2019/04/07 22:32:59] hooper to jopa hh
+[2019/04/07 22:33:12] jopa changed status to waiting
+[2019/04/07 22:33:12] hooper changed status to logined
+[2019/04/07 22:33:12] jopa exit
+[2019/04/07 22:33:36] New user request received : Socket[addr=/127.0.0.1,port=41212,localport=1234]
+[2019/04/07 22:33:36] New user request received : Socket[addr=/127.0.0.1,port=41214,localport=1234]
+[2019/04/07 22:33:40] undef_9 changed status to waiting
+[2019/04/07 22:33:40] undef_9 disconnected
+[2019/04/07 22:33:53] loopa registered
+[2019/04/07 22:33:53] loopa changed status to waiting
+[2019/04/07 22:33:53] loopa changed status to in conversation
+[2019/04/07 22:33:53] hooper changed status to in conversation
+[2019/04/07 22:33:53] loopa in chat with hooper
+[2019/04/07 22:33:53] loopa to hooper ggg
+[2019/04/07 22:35:32] loopa to hooper kkk
+[2019/04/07 22:35:39] hooper to loopa ssss
+[2019/04/07 22:36:00] loopa changed status to waiting
+[2019/04/07 22:36:00] hooper changed status to logined
+[2019/04/07 22:36:00] loopa leave chat with hooper
+[2019/04/07 22:36:11] hooper changed status to in conversation
+[2019/04/07 22:36:11] loopa changed status to in conversation
+[2019/04/07 22:36:11] hooper in chat with loopa
+[2019/04/07 22:36:11] hooper to loopa /s
+[2019/04/07 22:36:21] hooper changed status to logined
+[2019/04/07 22:36:21] loopa changed status to waiting
+[2019/04/07 22:36:21] hooper leave chat with loopa
+[2019/04/07 22:36:29] loopa changed status to waiting
+[2019/04/07 22:36:29] hooper changed status to logined
+[2019/04/07 22:36:29] loopa disconnected
+[2019/04/07 22:36:30] hooper changed status to logined
+[2019/04/07 22:36:30] loopa changed status to waiting
+[2019/04/07 22:36:30] hooper exit
