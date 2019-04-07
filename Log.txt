@@ -1,3 +1,36 @@
-[2019/04/07 02:16:29] Server powered on!
-[2019/04/07 02:16:29] Web server started
-[2019/04/07 02:16:29] Server commands started
+[2019/04/07 06:26:15] Server powered on!
+[2019/04/07 06:26:15] Web server started
+[2019/04/07 06:26:15] Server commands started
+[2019/04/07 06:26:15] Console server started
+[2019/04/07 06:26:19] New web user request received on session: io.javalin.websocket.WsSession@7bd098a1
+[2019/04/07 06:26:19] undef_1 changed status to not logined
+[2019/04/07 06:26:25] 111 changed status to logined
+[2019/04/07 06:26:42] New web user request received on session: io.javalin.websocket.WsSession@57653b46
+[2019/04/07 06:26:42] undef_2 changed status to not logined
+[2019/04/07 06:26:46] 222 changed status to waiting
+[2019/04/07 06:27:41] 111 changed status to in conversation
+[2019/04/07 06:27:41] 222 changed status to in conversation
+[2019/04/07 06:27:41] 111 in chat with 222
+[2019/04/07 06:27:41] 222 to 111 register 111 0
+[2019/04/07 06:27:41] 222 to 111 111
+[2019/04/07 06:27:41] 222 to 111 222
+[2019/04/07 06:27:41] 111 to 222 dd
+[2019/04/07 06:28:24] 222 to 111 ff
+[2019/04/07 06:32:08] New web user request received on session: io.javalin.websocket.WsSession@22bd5c0e
+[2019/04/07 06:32:08] undef_3 changed status to not logined
+[2019/04/07 06:32:25] New web user request received on session: io.javalin.websocket.WsSession@6a7a451f
+[2019/04/07 06:32:25] undef_4 changed status to not logined
+[2019/04/07 06:32:44] jopaPopa228 changed status to waiting
+[2019/04/07 06:33:02] Zekoner changed status to logined
+[2019/04/07 06:33:02] Zekoner changed status to in conversation
+[2019/04/07 06:33:02] jopaPopa228 changed status to in conversation
+[2019/04/07 06:33:02] Zekoner in chat with jopaPopa228
+[2019/04/07 06:33:02] Zekoner to jopaPopa228 register Zekoner 0
+[2019/04/07 06:33:10] jopaPopa228 to Zekoner jj
+[2019/04/07 06:33:23] jopaPopa228 to Zekoner jj
+[2019/04/07 06:33:32] Zekoner to jopaPopa228 Э, нах
+[2019/04/07 06:33:39] Zekoner to jopaPopa228 !@#$%^&*()_
+[2019/04/07 06:33:55] Zekoner to jopaPopa228 ~
+[2019/04/07 06:34:21] Zekoner to jopaPopa228 <script>alert("Lol")</script>
+[2019/04/07 06:35:10] jopaPopa228 to Zekoner <script>alert("Lol")</script>
+[2019/04/07 06:35:18] Zekoner to jopaPopa228 "><script>alert("Lol")</script>

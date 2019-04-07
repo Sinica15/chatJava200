@@ -6,12 +6,28 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="chatControls">
-            <input id="message" placeholder="Type your message">
-            <button id="send">Send</button>
+        <div id="form_back">
+            <div id="register_form">
+                <input type="text" placeholder="Type your Name" id="userName">
+                <span>
+                    <input type="radio" id="agent" name="userType">
+                    <label for="agent">Agent</label>
+                </span>
+                <span>
+                    <input type="radio" id="client" name="userType">
+                    <label for="client">Client</label>
+                </span>
+                <div id="register_button">Register</div>
+            </div>
         </div>
-        <ul id="userlist"> <!-- Built by JS --> </ul>
-        <div id="chat">    <!-- Built by JS --> </div>
+        <div id="body_container">
+            <div id="chatControls">
+                <input id="message" placeholder="Type your message">
+                <button id="send">Send</button>
+            </div>
+<!--            <ul id="userlist"> &lt;!&ndash; Built by JS &ndash;&gt; </ul>-->
+            <div id="chat">    <!-- Built by JS --> </div>
+        </div>
         <script src="websocketDemo.js"></script>
     </body>
 </html>

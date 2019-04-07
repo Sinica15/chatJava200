@@ -1,10 +1,17 @@
 package Server.Users;
 
-import java.util.ArrayList;
+import Server.Server;
 
+import java.util.ArrayList;
+import java.util.Map;
+
+import static Server.Server.*;
 import static Server.Server.userStatuses;
+import static Server.Server.userTypes;
+import static Server.Utils.logWrite.prt;
 
 abstract public class User {
+
     int id;
     String Name = "noname";
     String Type = "undef";
@@ -46,14 +53,121 @@ abstract public class User {
     }
 
     void clientTimeLog(String str) {
-        Server.Utils.logWrite.prt(str);
+        prt(str);
     }
 
-    public void SendMsgToInterloc (String msg){
+    public void SendMsgToInterloc (String msg, char mode){
         this.Interlocutor.SendMsgToSelf(this.getName() + ": " + msg);
     }
 
-    abstract public void setStatus(String status);
+    public void SendMsgToInterloc (String msg){
+        this.Interlocutor.SendMsgToSelf(msg);
+    }
+
+    void connectionWith(User interlocutor) {
+        //connect
+        this.setInterlocutor(interlocutor);
+        interlocutor.setInterlocutor(this);
+        //change status
+        this.setStatus(userStatuses[2]);
+        Interlocutor.setStatus(userStatuses[2]);
+        //welcome msg
+        this.SendMsgToSelf(Interlocutor.getName() + " found, you in chat!");
+        this.SendMsgToInterloc((this.getName() + " found, you in chat!"));
+
+        clientTimeLog(this.getName() + " in chat with " + Interlocutor.getName());
+
+        if (Interlocutor.getType().equals(userTypes[1])) {
+            for (String massage : this.clientMassages) {
+                Interlocutor.SendMsgToSelf(this.getName() + ": " + massage);
+                clientTimeLog(Interlocutor.getName() + " to " + this.getName() + " " + massage);
+            }
+            this.clientMassages.clear();
+        } else {
+            for (String massage : Interlocutor.clientMassages) {
+                this.SendMsgToSelf(Interlocutor.getName() + ": " + massage);
+                clientTimeLog(this.getName() + " to " + Interlocutor.getName() + " " + massage);
+
+            }
+            Interlocutor.clientMassages.clear();
+        }
+    }
+
+    public void setStatus(String status) {
+        if (this.Type.equals(userTypes[1]) && status.equals(userStatuses[1])){
+            this.Status = userStatuses[3];
+        }else {
+            this.Status = status;
+        }
+        clientTimeLog(this.getName() + " changed status to " + this.getStatus());
+        if (this.Type.equals(userTypes[1]) && status.equals(userStatuses[3])) {
+            lookingFor(userTypes[0]);
+        }
+    }
+
+    synchronized void lookingFor(String Type) {
+        for (Map.Entry<Integer, User> item : getClientArr().entrySet()) {
+            if (item.getValue().getType().equals(Type) &&
+                    item.getValue().getStatus().equals(userStatuses[3])) {
+                connectionWith(item.getValue());
+                break;
+            }
+        }
+    }
+
+    void disconnectingInterlocutors() {
+        if (this.Type.equals(userTypes[0])) {
+            this.setStatus(userStatuses[1]);
+            if (Interlocutor != null) {
+                Interlocutor.setStatus(userStatuses[3]);
+            }
+        } else {
+            this.setStatus(userStatuses[3]);
+            if (Interlocutor != null) {
+                Interlocutor.setStatus(userStatuses[1]);
+            }
+        }
+    }
+
+    void usedDisconnect(String mode) {
+        if (mode.equals("exit")) {
+            clientTimeLog(this.getName() + " " + mode);
+
+        }
+        if (mode.equals("disconnected")) {
+            clientTimeLog(this.getName() + " " + mode);
+
+        }
+        getClientArr().remove(this.getId());
+    }
+
+    public void runMethod(String received){
+        //client change status on waiting
+        if (this.Type.equals(userTypes[0]) && this.Status.equals(userStatuses[1])) {
+//                    System.out.println("look");
+            this.Status = userStatuses[3];
+            lookingFor(userTypes[1]);
+            if (this.Status.equals(userStatuses[3])) {
+                this.clientMassages.add(received);
+                return;
+            }
+        }
+
+        //write message of waiting client
+        if (this.Type.equals(userTypes[0]) && this.Status.equals(userStatuses[3])) {
+            lookingFor(userTypes[1]);
+            if (this.Status.equals(userStatuses[3])) {
+                this.clientMassages.add(received);
+                return;
+            }
+        }
+
+        //conversation
+        if (Status.equals(userStatuses[2])) {
+            this.SendMsgToInterloc(received, 'm');
+            clientTimeLog(this.getName() + " to " + Interlocutor.getName() + " " + received);
+        }
+    }
 
     abstract public void SendMsgToSelf(String msg);
 
