@@ -30,11 +30,8 @@ public class ServerWeb extends Thread {
                     });
                     ws.onMessage((session, message) -> {
                         User user = getClientArr().get(session.hashCode());
-                        if(user.getStatus().equals(userStatuses[0])){
-                            user.registerUser(message, 0);
-                        }
+                        System.out.println(user.getName() + " " + message);
                         user.runMethod(message);
-
                     });
                 })
                 .start();

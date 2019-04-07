@@ -18,7 +18,7 @@ public class UserWS extends User{
     WsSession session;
 
     public UserWS(int id, String ConnectonType, WsSession session) {
-        super(id, ConnectonType);
+        super(session.hashCode(), ConnectonType);
         this.session = session;
         setStatus(userStatuses[0]);
     }
@@ -32,13 +32,13 @@ public class UserWS extends User{
     }
 
     @Override
-    public void SendMsgToSelf(String msg) {
+    public void SendMsgToSelf(String msg, String from) {
         Map map = new HashMap<Integer, String>();
         map.put(0 , this.getName());
         map.put(1 , Interlocutor.getName());
         session.send(
                 new JSONObject()
-                        .put("userMessage", createHtmlMessageFromSender(Interlocutor.getName(), msg))
+                        .put("userMessage", createHtmlMessageFromSender(from, msg))
                         .put("userlist", map.values()).toString()
         );
     }
@@ -46,10 +46,47 @@ public class UserWS extends User{
     @Override
     public boolean registerUser(String str, int u) {
         String infAbtUser[] = str.split(" ");
-        if (!infAbtUser[0].equals("register")) return false;
-        this.Name = infAbtUser[1];
-        this.Type = userTypes[Integer.parseInt(infAbtUser[2])];
+        if (!infAbtUser[1].equals("register")) return false;
+        this.Name = infAbtUser[2];
+        this.Type = userTypes[Integer.parseInt(infAbtUser[3])];
         this.setStatus(userStatuses[1]);
+        return false;
+    }
+
+    @Override
+    boolean checkingForCommands(String received) {
+        //checking for command
+        if(!received.split(" ")[0].equals("$%$$")) return false;
+
+        //extracting the keyword
+        String keyword = received.split(" ")[1];
+
+        //register
+        if(this.getStatus().equals(userStatuses[0]) && keyword.equals("register")){
+            this.registerUser(received, 0);
+            return true;
+        }
+
+        //leave
+        if(this.getStatus().equals(userStatuses[2]) && keyword.equals("leave")){
+            System.out.println(this.getName() + " leave");
+            disconnectingInterlocutors();
+            this.SendMsgToSelf("you leave chat with " + Interlocutor.getName(), "Server");
+            clientTimeLog(this.getName() + " leave chat with " + Interlocutor.getName());
+            return true;
+        }
+
+
+        //exit
+        if(keyword.equals("exit")){
+            System.out.println(this.getName() + " exit");
+            disconnectingInterlocutors();
+            usedDisconnect("exit");
+            return true;
+        }
+
+
+
         return false;
     }
 }

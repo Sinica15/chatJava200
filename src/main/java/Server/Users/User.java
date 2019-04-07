@@ -56,12 +56,8 @@ abstract public class User {
         prt(str);
     }
 
-    public void SendMsgToInterloc (String msg, char mode){
-        this.Interlocutor.SendMsgToSelf(this.getName() + ": " + msg);
-    }
-
     public void SendMsgToInterloc (String msg){
-        this.Interlocutor.SendMsgToSelf(msg);
+        this.Interlocutor.SendMsgToSelf(msg, this.getName());
     }
 
     void connectionWith(User interlocutor) {
@@ -72,20 +68,20 @@ abstract public class User {
         this.setStatus(userStatuses[2]);
         Interlocutor.setStatus(userStatuses[2]);
         //welcome msg
-        this.SendMsgToSelf(Interlocutor.getName() + " found, you in chat!");
+        this.SendMsgToSelf(Interlocutor.getName() + " found, you in chat!", "Server");
         this.SendMsgToInterloc((this.getName() + " found, you in chat!"));
 
         clientTimeLog(this.getName() + " in chat with " + Interlocutor.getName());
 
         if (Interlocutor.getType().equals(userTypes[1])) {
             for (String massage : this.clientMassages) {
-                Interlocutor.SendMsgToSelf(this.getName() + ": " + massage);
+                this.SendMsgToInterloc(massage);
                 clientTimeLog(Interlocutor.getName() + " to " + this.getName() + " " + massage);
             }
             this.clientMassages.clear();
         } else {
             for (String massage : Interlocutor.clientMassages) {
-                this.SendMsgToSelf(Interlocutor.getName() + ": " + massage);
+                this.SendMsgToSelf(massage, Interlocutor.getName());
                 clientTimeLog(this.getName() + " to " + Interlocutor.getName() + " " + massage);
 
             }
@@ -138,10 +134,14 @@ abstract public class User {
             clientTimeLog(this.getName() + " " + mode);
 
         }
-        getClientArr().remove(this.getId());
+//        getClientArr().remove(this.getId());
+        removeUser(this.getId());
     }
 
     public void runMethod(String received){
+
+        if (checkingForCommands(received)) return;
+
         //client change status on waiting
         if (this.Type.equals(userTypes[0]) && this.Status.equals(userStatuses[1])) {
 //                    System.out.println("look");
@@ -164,12 +164,14 @@ abstract public class User {
 
         //conversation
         if (Status.equals(userStatuses[2])) {
-            this.SendMsgToInterloc(received, 'm');
+            this.SendMsgToInterloc(received);
             clientTimeLog(this.getName() + " to " + Interlocutor.getName() + " " + received);
         }
     }
 
-    abstract public void SendMsgToSelf(String msg);
+    abstract public void SendMsgToSelf(String msg, String from);
 
     abstract public boolean registerUser(String str, int userType);
+
+    abstract boolean checkingForCommands(String received);
 }

@@ -9,7 +9,7 @@ ws.onmessage = msg => updateChat(msg);
 ws.onclose = () => alert("WebSocket connection closed");
 
 // Add event listeners to button and input field
-id("send").addEventListener("click", () => sendAndClear(id("message").value));
+id("send_button").addEventListener("click", () => sendAndClear(id("message").value));
 id("message").addEventListener("keypress", function (e) {
     if (e.keyCode === 13) { // Send message if enter is pressed in input field
         sendAndClear(e.target.value);
@@ -20,17 +20,25 @@ id("register_button").addEventListener("click", () => {
     alert("Name field can't be empty");
   }
   if (id("userName").value.trim() != "" && id("agent").checked) {
-    console.log("register " + id("userName").value.trim() + " 1");
-    ws.send("register " + id("userName").value.trim() + " 1");
+    console.log("$%$$ register " + id("userName").value.trim() + " 1");
+    ws.send("$%$$ register " + id("userName").value.trim() + " 1");
     id("form_back").remove();
     return;
   }
   if (id("userName").value.trim() != "" && id("client").checked) {
-    console.log("register " + id("userName").value.trim() + " 0");
-    ws.send("register " + id("userName").value.trim() + " 0");
+    console.log("$%$$ register " + id("userName").value.trim() + " 0");
+    ws.send("$%$$ register " + id("userName").value.trim() + " 0");
     id("form_back").remove();
     return;
   }
+});
+id("leave_button").addEventListener("click", () => {
+  console.log("$%$$ leave");
+  ws.send("$%$$ leave");
+});
+id("exit_button").addEventListener("click", () => {
+  console.log("$%$$ exit");
+  ws.send("$%$$ exit");
 });
 
 

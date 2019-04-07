@@ -43,9 +43,9 @@ public class UserS extends User implements Runnable{
     }
 
     @Override
-    public void SendMsgToSelf(String msg) {
+    public void SendMsgToSelf(String msg, String from) {
         try {
-            this.dOutS.writeUTF(msg);
+            this.dOutS.writeUTF(from + ": "+ msg);
         } catch (IOException e) {
 //            e.printStackTrace();
             System.out.println("send msg err");
@@ -56,7 +56,7 @@ public class UserS extends User implements Runnable{
     public boolean registerUser(String str, int userType) {
         this.Type = userTypes[userType];
         setUserName(str);
-        this.SendMsgToSelf("you are registered as " + this.Type);
+        this.SendMsgToSelf("you are registered as " + this.Type, "Server");
         clientTimeLog(this.getName() + " registered");
         if (userType == 0) {
             this.setStatus(userStatuses[1]);
@@ -66,12 +66,17 @@ public class UserS extends User implements Runnable{
         return true;
     }
 
-    boolean checkingForSlashCommads(String received) {
-//        System.out.println("123");
+    @Override
+    boolean checkingForCommands(String received) {
+//        System.out.println("checkingForCommands")
+
+        //check slash
         if (received.isEmpty()) return true;
         if (received.trim().charAt(0) != '/') {
             return false;
         }
+
+        //check register
         if (received.trim().indexOf("register") == 1) {
             if (Status.equals(userStatuses[0])) {
                 if (received.trim().indexOf(userTypes[0]) <= 14 && received.trim().indexOf(userTypes[0]) > 5) {
@@ -81,16 +86,20 @@ public class UserS extends User implements Runnable{
                     return registerUser(received, 1);
                 }
             } else {
-                this.SendMsgToSelf("you are already registered!");
+                this.SendMsgToSelf("you are already registered!", "Server");
                 return true;
             }
         }
+
+        //check leave
         if (received.trim().indexOf("leave") == 1 && this.Status.equals(userStatuses[2])) {
             disconnectingInterlocutors();
-            this.SendMsgToSelf("you leave chat with " + Interlocutor.getName());
+            this.SendMsgToSelf("you leave chat with " + Interlocutor.getName(), "Server");
             clientTimeLog(this.getName() + " leave chat with " + Interlocutor.getName());
             return true;
         }
+
+        //check exit
         if (received.trim().indexOf("exit") == 1) {
             disconnectingInterlocutors();
             try {
@@ -102,6 +111,7 @@ public class UserS extends User implements Runnable{
             disable();
             return true;
         }
+
         return false;
     }
 
@@ -111,14 +121,10 @@ public class UserS extends User implements Runnable{
         while (isActive){
 
             try {
-                // receive the string
-                received = dInpS.readUTF();
-//                System.out.println(received);
 
-                if (checkingForSlashCommads(received)) continue;
+                received = dInpS.readUTF();
 
                 runMethod(received);
-
 
             } catch (IOException e) {
                 disconnectingInterlocutors();
