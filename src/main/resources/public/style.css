@@ -35,6 +35,7 @@ li {
     padding: 5px 10px;
     width: 150px;
     top: 30px;
+    z-index: -1;
 }
 
 #chat p {
@@ -83,7 +84,9 @@ li {
 }
 
 #form_back{
+  /*  */
   /* display: none; */
+  /*  */
   position: fixed;
   width: 100%;
   height: 100%;

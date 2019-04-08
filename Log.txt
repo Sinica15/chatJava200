@@ -1,52 +1,14 @@
-[2019/04/08 01:28:38] test log
-[2019/04/08 02:06:26] undef_1 in chat with undef_2
-[2019/04/08 02:09:00] undef_1 in chat with undef_2
-[2019/04/08 02:09:08] undef_1 in chat with undef_2
-[2019/04/08 02:15:52] undef_1 in chat with null
-[2019/04/08 02:19:37] client_1 in chat with null
-[2019/04/08 02:20:24] client_1 in chat with null
-[2019/04/08 02:33:54] client_1 in chat with null
-[2019/04/08 02:35:13] client_1 in chat with null
-[2019/04/08 02:37:36] client_1 in chat with null
-[2019/04/08 02:42:16] client_1 in chat with agent_1
-[2019/04/08 02:55:01] client_1 in chat with agent_1
-[2019/04/08 03:00:40] client_1 changed status to logined
-[2019/04/08 03:00:40] agent_2 changed status to waiting
-[2019/04/08 03:02:41] client_1 changed status to logined
-[2019/04/08 03:02:41] agent_2 changed status to waiting
-[2019/04/08 03:02:41] client_1 changed status to waiting
-[2019/04/08 03:02:41] agent_2 changed status to waiting
-[2019/04/08 03:03:03] client_1 changed status to logined
-[2019/04/08 03:03:03] agent_2 changed status to waiting
-[2019/04/08 03:03:03] client_1 changed status to waiting
-[2019/04/08 03:03:03] agent_2 changed status to waiting
-[2019/04/08 03:03:03] client_1 changed status to in conversation
-[2019/04/08 03:03:03] agent_2 changed status to in conversation
-[2019/04/08 03:05:57] client_1 changed status to logined
-[2019/04/08 03:05:57] agent_2 changed status to waiting
-[2019/04/08 03:05:57] client_1 changed status to waiting
-[2019/04/08 03:05:57] agent_2 changed status to waiting
-[2019/04/08 03:05:57] client_1 changed status to in conversation
-[2019/04/08 03:05:57] agent_2 changed status to in conversation
-[2019/04/08 03:05:57] client_1 in chat with agent_1
-[2019/04/08 03:12:53] client_1 changed status to logined
-[2019/04/08 03:12:53] agent_2 changed status to waiting
-[2019/04/08 03:20:07] undef_1 exit
-[2019/04/08 03:20:07] undef_2 disconnected
-[2019/04/08 03:32:56] client_1 changed status to logined
-[2019/04/08 03:34:16] client_1 changed status to logined
-[2019/04/08 03:35:49] client_1 in chat with agent_1
-[2019/04/08 03:35:55] client_1 changed status to logined
-[2019/04/08 03:35:55] client_1 changed status to logined
-[2019/04/08 03:35:55] agent_2 changed status to waiting
-[2019/04/08 03:35:55] client_1 changed status to waiting
-[2019/04/08 03:35:55] agent_2 changed status to waiting
-[2019/04/08 03:35:55] client_1 changed status to in conversation
-[2019/04/08 03:35:55] agent_2 changed status to in conversation
-[2019/04/08 03:35:55] undef_1 exit
-[2019/04/08 03:35:55] undef_2 disconnected
-[2019/04/08 03:35:55] client_1 in chat with agent_1
-[2019/04/08 03:35:55] client_1 changed status to logined
-[2019/04/08 03:35:55] agent_2 changed status to waiting
-[2019/04/08 03:44:11] agent_2 changed status to waiting
-[2019/04/08 03:44:11] client_1 in chat with agent_2
+[2019/04/08 15:43:59] Server powered on!
+[2019/04/08 15:43:59] Web server started
+[2019/04/08 15:43:59] Server commands started
+[2019/04/08 15:43:59] Console server started
+[2019/04/08 15:44:05] New web user request received on session: io.javalin.websocket.WsSession@16f7279a
+[2019/04/08 15:44:05] undef_385296282 changed status to not logined
+[2019/04/08 15:44:36] agentA changed status to waiting
+[2019/04/08 15:44:58] New web user request received on session: io.javalin.websocket.WsSession@40d6484e
+[2019/04/08 15:44:58] undef_1087785038 changed status to not logined
+[2019/04/08 15:45:04] JJJJ changed status to logined
+[2019/04/08 15:45:10] JJJJ changed status to in conversation
+[2019/04/08 15:45:10] agentA changed status to in conversation
+[2019/04/08 15:45:10] JJJJ in chat with agentA
+[2019/04/08 15:45:10] JJJJ to agentA jjj

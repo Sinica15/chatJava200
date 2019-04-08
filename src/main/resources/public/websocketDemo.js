@@ -41,16 +41,12 @@ id("exit_button").addEventListener("click", () => {
   ws.send("$%$$ exit");
 });
 
-
-
 function sendAndClear(message) {
     if (message !== "") {
         ws.send(message);
         id("message").value = "";
     }
 }
-
-
 
 function updateChat(msg) { // Update chat-panel and list of connected users
     let data = JSON.parse(msg.data);
