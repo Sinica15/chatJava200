@@ -1,14 +1,14 @@
-[2019/04/08 15:43:59] Server powered on!
-[2019/04/08 15:43:59] Web server started
-[2019/04/08 15:43:59] Server commands started
-[2019/04/08 15:43:59] Console server started
-[2019/04/08 15:44:05] New web user request received on session: io.javalin.websocket.WsSession@16f7279a
-[2019/04/08 15:44:05] undef_385296282 changed status to not logined
-[2019/04/08 15:44:36] agentA changed status to waiting
-[2019/04/08 15:44:58] New web user request received on session: io.javalin.websocket.WsSession@40d6484e
-[2019/04/08 15:44:58] undef_1087785038 changed status to not logined
-[2019/04/08 15:45:04] JJJJ changed status to logined
-[2019/04/08 15:45:10] JJJJ changed status to in conversation
-[2019/04/08 15:45:10] agentA changed status to in conversation
-[2019/04/08 15:45:10] JJJJ in chat with agentA
-[2019/04/08 15:45:10] JJJJ to agentA jjj
+[2019/04/08 17:57:05] Server powered on!
+[2019/04/08 17:57:05] Web server started
+[2019/04/08 17:57:05] Server commands started
+[2019/04/08 17:57:05] Console server started
+[2019/04/08 17:57:22] New web user request received on session: io.javalin.websocket.WsSession@68e37f09
+[2019/04/08 17:57:22] undef_1759739657 changed status to not logined
+[2019/04/08 17:57:31] ClientA changed status to logined
+[2019/04/08 17:57:41] New web user request received on session: io.javalin.websocket.WsSession@257cd8fb
+[2019/04/08 17:57:41] undef_628939003 changed status to not logined
+[2019/04/08 17:57:50] AgentB changed status to waiting
+[2019/04/08 17:57:50] AgentB changed status to in conversation
+[2019/04/08 17:57:50] ClientA changed status to in conversation
+[2019/04/08 17:57:50] AgentB in chat with ClientA
+[2019/04/08 17:57:50] AgentB to ClientA aaa

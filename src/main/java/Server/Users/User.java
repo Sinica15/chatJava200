@@ -12,6 +12,14 @@ import static Server.Utils.logWrite.prt;
 
 abstract public class User {
 
+
+    public void deb(String str){
+        boolean deb = true;
+        if(deb){
+            System.out.println( "[debMode] " + this.fullInfo() + ": " + str);
+        }
+    }
+
     int id;
     String Name = "noname";
     String Type = "undef";
@@ -65,6 +73,8 @@ abstract public class User {
     }
 
     void connectionWith(User interlocutor) {
+        deb("connectionWith " + interlocutor.fullInfo());
+
         //connect
         this.setInterlocutor(interlocutor);
         interlocutor.setInterlocutor(this);
@@ -94,18 +104,22 @@ abstract public class User {
     }
 
     public void setStatus(String status) {
+        deb("setStatus " + status);
+
         if (this.Type.equals(userTypes[1]) && status.equals(userStatuses[1])){
             this.Status = userStatuses[3];
         }else {
             this.Status = status;
         }
         clientTimeLog(this.getName() + " changed status to " + this.getStatus());
-        if (this.Type.equals(userTypes[1]) && status.equals(userStatuses[3])) {
+        if (this.Type.equals(userTypes[1]) && this.Status.equals(userStatuses[3])) {
             this.lookingFor(userTypes[0]);
         }
     }
 
     synchronized void lookingFor(String Type) {
+        deb("lookingFor " + Type);
+
         for (Map.Entry<Integer, User> item : getClientArr().entrySet()) {
             if (item.getValue().getType().equals(Type) &&
                     item.getValue().getStatus().equals(userStatuses[3])) {
@@ -116,6 +130,8 @@ abstract public class User {
     }
 
     void disconnectingInterlocutors() {
+        deb("disconnectingInterlocutors");
+
         if (this.Type.equals(userTypes[0])) {
             this.setStatus(userStatuses[1]);
             if (Interlocutor != null) {
@@ -130,6 +146,8 @@ abstract public class User {
     }
 
     void usedDisconnect(String mode) {
+        deb("usedDisconnect " + mode);
+
         if (mode.equals("exit")) {
             clientTimeLog(this.getName() + " " + mode);
 
@@ -143,6 +161,7 @@ abstract public class User {
     }
 
     public void runMethod(String received){
+        deb("runMethod " + received);
 
         if (checkingForCommands(received)) return;
 
