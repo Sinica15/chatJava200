@@ -1,98 +1,52 @@
-[2019/04/07 22:19:25] Server powered on!
-[2019/04/07 22:19:25] Web server started
-[2019/04/07 22:19:25] Server commands started
-[2019/04/07 22:19:25] Console server started
-[2019/04/07 22:19:41] New user request received : Socket[addr=/127.0.0.1,port=34436,localport=1234]
-[2019/04/07 22:19:42] New user request received : Socket[addr=/127.0.0.1,port=34438,localport=1234]
-[2019/04/07 22:20:05] New web user request received on session: io.javalin.websocket.WsSession@68e37f09
-[2019/04/07 22:20:05] undef_1759739657 changed status to not logined
-[2019/04/07 22:20:07] New web user request received on session: io.javalin.websocket.WsSession@257cd8fb
-[2019/04/07 22:20:07] undef_628939003 changed status to not logined
-[2019/04/07 22:20:53] Gosha changed status to logined
-[2019/04/07 22:21:10] cooper registered
-[2019/04/07 22:21:10] cooper changed status to waiting
-[2019/04/07 22:21:10] cooper changed status to in conversation
-[2019/04/07 22:21:10] Gosha changed status to in conversation
-[2019/04/07 22:21:10] cooper in chat with Gosha
-[2019/04/07 22:21:10] cooper to Gosha ssss
-[2019/04/07 22:21:10] cooper to Gosha aaa
-[2019/04/07 22:21:10] cooper to Gosha ww
-[2019/04/07 22:21:10] cooper to Gosha qq
-[2019/04/07 22:21:26] cooper to Gosha gg
-[2019/04/07 22:21:39] jopa registered
-[2019/04/07 22:21:39] jopa changed status to logined
-[2019/04/07 22:22:02] Hopper changed status to waiting
-[2019/04/07 22:22:16] jopa changed status to in conversation
-[2019/04/07 22:22:16] Hopper changed status to in conversation
-[2019/04/07 22:22:16] jopa in chat with Hopper
-[2019/04/07 22:22:16] Hopper to jopa sss
-[2019/04/07 22:22:16] Hopper to jopa fff
-[2019/04/07 22:22:16] Hopper to jopa cccc
-[2019/04/07 22:22:16] Hopper to jopa aaaa
-[2019/04/07 22:22:16] jopa to Hopper hh
-[2019/04/07 22:23:08] jopa to Hopper kkk
-[2019/04/07 22:23:11] jopa to Hopper iuyg
-[2019/04/07 22:23:22] Hopper changed status to waiting
-[2019/04/07 22:23:22] jopa changed status to logined
-[2019/04/07 22:23:22] Hopper leave chat with jopa
-[2019/04/07 22:23:30] cooper changed status to waiting
-[2019/04/07 22:23:30] Gosha changed status to logined
-[2019/04/07 22:23:30] cooper disconnected
-[2019/04/07 22:23:31] jopa changed status to logined
-[2019/04/07 22:23:31] Hopper changed status to waiting
-[2019/04/07 22:23:31] jopa disconnected
-[2019/04/07 22:23:43] Gosha changed status to logined
-[2019/04/07 22:23:43] cooper changed status to waiting
-[2019/04/07 22:23:43] Gosha exit
-[2019/04/07 22:31:32] New user request received : Socket[addr=/127.0.0.1,port=40198,localport=1234]
-[2019/04/07 22:31:32] New user request received : Socket[addr=/127.0.0.1,port=40200,localport=1234]
-[2019/04/07 22:31:59] kkkk registered
-[2019/04/07 22:31:59] kkkk changed status to logined
-[2019/04/07 22:32:13] jopa registered
-[2019/04/07 22:32:13] jopa changed status to waiting
-[2019/04/07 22:32:13] jopa changed status to in conversation
-[2019/04/07 22:32:13] kkkk changed status to in conversation
-[2019/04/07 22:32:13] jopa in chat with kkkk
-[2019/04/07 22:32:13] jopa to kkkk kkklll
-[2019/04/07 22:32:13] jopa to kkkk kjgjhkj
-[2019/04/07 22:32:28] kkkk changed status to logined
-[2019/04/07 22:32:28] jopa changed status to waiting
-[2019/04/07 22:32:28] kkkk disconnected
-[2019/04/07 22:32:37] New web user request received on session: io.javalin.websocket.WsSession@db0283f
-[2019/04/07 22:32:37] undef_229648447 changed status to not logined
-[2019/04/07 22:32:47] hooper changed status to logined
-[2019/04/07 22:32:59] hooper changed status to in conversation
-[2019/04/07 22:32:59] jopa changed status to in conversation
-[2019/04/07 22:32:59] hooper in chat with jopa
-[2019/04/07 22:32:59] hooper to jopa hh
-[2019/04/07 22:33:12] jopa changed status to waiting
-[2019/04/07 22:33:12] hooper changed status to logined
-[2019/04/07 22:33:12] jopa exit
-[2019/04/07 22:33:36] New user request received : Socket[addr=/127.0.0.1,port=41212,localport=1234]
-[2019/04/07 22:33:36] New user request received : Socket[addr=/127.0.0.1,port=41214,localport=1234]
-[2019/04/07 22:33:40] undef_9 changed status to waiting
-[2019/04/07 22:33:40] undef_9 disconnected
-[2019/04/07 22:33:53] loopa registered
-[2019/04/07 22:33:53] loopa changed status to waiting
-[2019/04/07 22:33:53] loopa changed status to in conversation
-[2019/04/07 22:33:53] hooper changed status to in conversation
-[2019/04/07 22:33:53] loopa in chat with hooper
-[2019/04/07 22:33:53] loopa to hooper ggg
-[2019/04/07 22:35:32] loopa to hooper kkk
-[2019/04/07 22:35:39] hooper to loopa ssss
-[2019/04/07 22:36:00] loopa changed status to waiting
-[2019/04/07 22:36:00] hooper changed status to logined
-[2019/04/07 22:36:00] loopa leave chat with hooper
-[2019/04/07 22:36:11] hooper changed status to in conversation
-[2019/04/07 22:36:11] loopa changed status to in conversation
-[2019/04/07 22:36:11] hooper in chat with loopa
-[2019/04/07 22:36:11] hooper to loopa /s
-[2019/04/07 22:36:21] hooper changed status to logined
-[2019/04/07 22:36:21] loopa changed status to waiting
-[2019/04/07 22:36:21] hooper leave chat with loopa
-[2019/04/07 22:36:29] loopa changed status to waiting
-[2019/04/07 22:36:29] hooper changed status to logined
-[2019/04/07 22:36:29] loopa disconnected
-[2019/04/07 22:36:30] hooper changed status to logined
-[2019/04/07 22:36:30] loopa changed status to waiting
-[2019/04/07 22:36:30] hooper exit
+[2019/04/08 01:28:38] test log
+[2019/04/08 02:06:26] undef_1 in chat with undef_2
+[2019/04/08 02:09:00] undef_1 in chat with undef_2
+[2019/04/08 02:09:08] undef_1 in chat with undef_2
+[2019/04/08 02:15:52] undef_1 in chat with null
+[2019/04/08 02:19:37] client_1 in chat with null
+[2019/04/08 02:20:24] client_1 in chat with null
+[2019/04/08 02:33:54] client_1 in chat with null
+[2019/04/08 02:35:13] client_1 in chat with null
+[2019/04/08 02:37:36] client_1 in chat with null
+[2019/04/08 02:42:16] client_1 in chat with agent_1
+[2019/04/08 02:55:01] client_1 in chat with agent_1
+[2019/04/08 03:00:40] client_1 changed status to logined
+[2019/04/08 03:00:40] agent_2 changed status to waiting
+[2019/04/08 03:02:41] client_1 changed status to logined
+[2019/04/08 03:02:41] agent_2 changed status to waiting
+[2019/04/08 03:02:41] client_1 changed status to waiting
+[2019/04/08 03:02:41] agent_2 changed status to waiting
+[2019/04/08 03:03:03] client_1 changed status to logined
+[2019/04/08 03:03:03] agent_2 changed status to waiting
+[2019/04/08 03:03:03] client_1 changed status to waiting
+[2019/04/08 03:03:03] agent_2 changed status to waiting
+[2019/04/08 03:03:03] client_1 changed status to in conversation
+[2019/04/08 03:03:03] agent_2 changed status to in conversation
+[2019/04/08 03:05:57] client_1 changed status to logined
+[2019/04/08 03:05:57] agent_2 changed status to waiting
+[2019/04/08 03:05:57] client_1 changed status to waiting
+[2019/04/08 03:05:57] agent_2 changed status to waiting
+[2019/04/08 03:05:57] client_1 changed status to in conversation
+[2019/04/08 03:05:57] agent_2 changed status to in conversation
+[2019/04/08 03:05:57] client_1 in chat with agent_1
+[2019/04/08 03:12:53] client_1 changed status to logined
+[2019/04/08 03:12:53] agent_2 changed status to waiting
+[2019/04/08 03:20:07] undef_1 exit
+[2019/04/08 03:20:07] undef_2 disconnected
+[2019/04/08 03:32:56] client_1 changed status to logined
+[2019/04/08 03:34:16] client_1 changed status to logined
+[2019/04/08 03:35:49] client_1 in chat with agent_1
+[2019/04/08 03:35:55] client_1 changed status to logined
+[2019/04/08 03:35:55] client_1 changed status to logined
+[2019/04/08 03:35:55] agent_2 changed status to waiting
+[2019/04/08 03:35:55] client_1 changed status to waiting
+[2019/04/08 03:35:55] agent_2 changed status to waiting
+[2019/04/08 03:35:55] client_1 changed status to in conversation
+[2019/04/08 03:35:55] agent_2 changed status to in conversation
+[2019/04/08 03:35:55] undef_1 exit
+[2019/04/08 03:35:55] undef_2 disconnected
+[2019/04/08 03:35:55] client_1 in chat with agent_1
+[2019/04/08 03:35:55] client_1 changed status to logined
+[2019/04/08 03:35:55] agent_2 changed status to waiting
+[2019/04/08 03:44:11] agent_2 changed status to waiting
+[2019/04/08 03:44:11] client_1 in chat with agent_2

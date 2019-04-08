@@ -44,6 +44,10 @@ abstract public class User {
         return Type;
     }
 
+    public void setType(String Type) {
+        this.Type = Type;
+    }
+
     public String fullInfo() {
         return String.valueOf(id) + " " + Type + " " + Name + " " + Status;
     }
@@ -72,8 +76,9 @@ abstract public class User {
         this.SendMsgToInterloc((this.getName() + " found, you in chat!"));
 
         clientTimeLog(this.getName() + " in chat with " + Interlocutor.getName());
-
+        //send accumulated msg
         if (Interlocutor.getType().equals(userTypes[1])) {
+//        if (true) {
             for (String massage : this.clientMassages) {
                 this.SendMsgToInterloc(massage);
                 clientTimeLog(Interlocutor.getName() + " to " + this.getName() + " " + massage);
@@ -83,7 +88,6 @@ abstract public class User {
             for (String massage : Interlocutor.clientMassages) {
                 this.SendMsgToSelf(massage, Interlocutor.getName());
                 clientTimeLog(this.getName() + " to " + Interlocutor.getName() + " " + massage);
-
             }
             Interlocutor.clientMassages.clear();
         }
@@ -97,7 +101,7 @@ abstract public class User {
         }
         clientTimeLog(this.getName() + " changed status to " + this.getStatus());
         if (this.Type.equals(userTypes[1]) && status.equals(userStatuses[3])) {
-            lookingFor(userTypes[0]);
+            this.lookingFor(userTypes[0]);
         }
     }
 
@@ -105,7 +109,7 @@ abstract public class User {
         for (Map.Entry<Integer, User> item : getClientArr().entrySet()) {
             if (item.getValue().getType().equals(Type) &&
                     item.getValue().getStatus().equals(userStatuses[3])) {
-                connectionWith(item.getValue());
+                this.connectionWith(item.getValue());
                 break;
             }
         }
@@ -152,7 +156,7 @@ abstract public class User {
         if (this.Type.equals(userTypes[0]) && this.Status.equals(userStatuses[1])) {
 //                    System.out.println("look");
             this.Status = userStatuses[3];
-            lookingFor(userTypes[1]);
+            this.lookingFor(userTypes[1]);
             if (this.Status.equals(userStatuses[3])) {
                 this.clientMassages.add(received);
                 return;
@@ -161,7 +165,7 @@ abstract public class User {
 
         //write message of waiting client
         if (this.Type.equals(userTypes[0]) && this.Status.equals(userStatuses[3])) {
-            lookingFor(userTypes[1]);
+            this.lookingFor(userTypes[1]);
             if (this.Status.equals(userStatuses[3])) {
                 this.clientMassages.add(received);
                 return;
