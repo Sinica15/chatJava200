@@ -1,14 +1,17 @@
-[2019/04/08 17:57:05] Server powered on!
-[2019/04/08 17:57:05] Web server started
-[2019/04/08 17:57:05] Server commands started
-[2019/04/08 17:57:05] Console server started
-[2019/04/08 17:57:22] New web user request received on session: io.javalin.websocket.WsSession@68e37f09
-[2019/04/08 17:57:22] undef_1759739657 changed status to not logined
-[2019/04/08 17:57:31] ClientA changed status to logined
-[2019/04/08 17:57:41] New web user request received on session: io.javalin.websocket.WsSession@257cd8fb
-[2019/04/08 17:57:41] undef_628939003 changed status to not logined
-[2019/04/08 17:57:50] AgentB changed status to waiting
-[2019/04/08 17:57:50] AgentB changed status to in conversation
-[2019/04/08 17:57:50] ClientA changed status to in conversation
-[2019/04/08 17:57:50] AgentB in chat with ClientA
-[2019/04/08 17:57:50] AgentB to ClientA aaa
+[2019/04/22 03:40:41] Server powered on!
+[2019/04/22 03:40:41] Web server started
+[2019/04/22 03:40:41] Console server started
+[2019/04/22 03:40:41] Server commands started
+[2019/04/22 03:41:11] New user request received : Socket[addr=/127.0.0.1,port=58418,localport=1234]
+[2019/04/22 03:41:18] New user request received : Socket[addr=/127.0.0.1,port=58422,localport=1234]
+[2019/04/22 03:41:24] New user request received : Socket[addr=/127.0.0.1,port=58426,localport=1234]
+[2019/04/22 03:41:46] a1 registered
+[2019/04/22 03:41:46] a1 changed status to waiting
+[2019/04/22 03:41:54] a2 registered
+[2019/04/22 03:41:54] a2 changed status to waiting
+[2019/04/22 03:44:14] a2 changed status to waiting
+[2019/04/22 03:44:14] a2 disconnected
+[2019/04/22 03:44:15] undef_1 changed status to waiting
+[2019/04/22 03:44:15] undef_1 disconnected
+[2019/04/22 03:44:16] a1 changed status to waiting
+[2019/04/22 03:44:16] a1 disconnected

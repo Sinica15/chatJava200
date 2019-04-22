@@ -40,11 +40,12 @@ public class Server {
         utils.timeLog("Server powered on!");
 
         ServerWeb SWeb = new ServerWeb();
-        ServerCons SCons = new ServerCons();
-        ServerCommands commands = new ServerCommands();
-
         SWeb.start();
+
+        ServerCons SCons = new ServerCons();
         SCons.start();
+
+        ServerCommands commands = new ServerCommands();
         commands.start();
 
     }

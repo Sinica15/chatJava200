@@ -1,14 +1,13 @@
 package Server.Servers;
 
+import Server.Servers.RESTApi.routes;
 import Server.Users.User;
 import Server.Users.UserWS;
 import io.javalin.Javalin;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import static Server.Server.*;
 import static Server.Utils.utils.timeLog;
-import static j2html.TagCreator.*;
+import static io.javalin.apibuilder.ApiBuilder.get;
 
 public class ServerWeb extends Thread {
     @Override
@@ -35,6 +34,9 @@ public class ServerWeb extends Thread {
                         user.runMethod(message);
                     });
                     ws.onError((wsSession, throwable) -> System.out.println(throwable));
+                })
+                .routes(() -> {
+                    routes.route();
                 })
                 .start();
     }
