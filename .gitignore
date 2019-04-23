@@ -1,3 +1,7 @@
 /.idea
 /target
 chatJava20.iml
+/Client/target
+/Client/Client.iml
+/Server/target
+/Server/Server.iml

@@ -2,6 +2,7 @@ package Server.Users;
 
 import Server.Server;
 import io.javalin.websocket.WsSession;
+import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 import org.junit.Test;
 import org.mockito.Spy;
 
@@ -19,22 +20,32 @@ public class UserTest {
         Socket s1 = mock(Socket.class);
 //        WsSession session = mock(WsSession.class);
 
+//        UserWS spyWS1 = spy(new UserWS(0, "WebSocket", session));
+
         UserS spyS1 = spy(new UserS(1, "Socket", s1));
-        UserS spyS2 = spy(new UserS(1, "Socket", s1));
+        UserS spyS2 = spy(new UserS(2, "Socket", s1));
+
 //        UserS spyS1 = mock(UserS.class);
 //        UserWS spyS2 = mock(UserWS.class);
 
         spyS1.setType(userTypes[0]);
         spyS2.setType(userTypes[1]);
+//        spyWS1.setType(userTypes[1]);
 
         doNothing().when(spyS1).setStatus(anyString());
         doNothing().when(spyS2).setStatus(anyString());
+//        doNothing().when(spyWS1).setStatus(anyString());
+
         doNothing().when(spyS1).SendMsgToSelf(anyString(), anyString());
         doNothing().when(spyS2).SendMsgToSelf(anyString(), anyString());
+//        doNothing().when(spyWS1).SendMsgToSelf(anyString(), anyString());
+
         doNothing().when(spyS1).SendMsgToInterloc(anyString());
         doNothing().when(spyS2).SendMsgToInterloc(anyString());
+//        doNothing().when(spyWS1).SendMsgToInterloc(anyString());
 
         spyS1.connectionWith(spyS2);
+//        spyS1.connectionWith(spyWS1);
 
 //        System.out.println(spyS1);
 //        System.out.println(spyS2);

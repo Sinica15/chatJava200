@@ -63,40 +63,30 @@ public class handlers {
     static HashMap<Integer, User> pagList(Context ctx){
         String userType = takeParam(ctx, "userType");
         String userStatus = takeParam(ctx, "userStatus");
-
         HashMap<Integer, User> arrList = new HashMap<>();
-
         for(Map.Entry<Integer, User> item : Server.getClientArr().entrySet()){
-
             if (userType.equals(userTypes[0]) || userType.equals(userTypes[1])){
                 if(!userType.equals(item.getValue().getType())){
                     continue;
                 }
             }
-
             if (userStatus.equals("registered") ||
                 userStatus.equals("waiting") ||
                 userStatus.equals("free")){
-
                 if( userStatus.equals("registered") && item.getValue().getStatus().equals(userStatuses[0])){
                     continue;
                 }
-
                 if( userStatus.equals("waiting") && !item.getValue().getStatus().equals(userStatuses[3])){
                     continue;
                 }
-
                 if( userStatus.equals("free") &&
                     (item.getValue().getStatus().equals(userStatuses[0]) ||
                      item.getValue().getStatus().equals(userStatuses[2]))){
                     continue;
                 }
-
             }
-
             arrList.put(item.getKey(), item.getValue());
         }
-
         return arrList;
     }
 
@@ -120,6 +110,7 @@ public class handlers {
         String number = takeParam(ctx, "number");
         if (number.equals("true")){
             ctx.result(String.valueOf(userList.size()));
+            //json do
         }else {
             ctx.result(jsonOut.toString());
         }
