@@ -1,4 +1,8 @@
-[2019/04/23 11:14:44] Server powered on!
-[2019/04/23 11:14:44] Web server started
-[2019/04/23 11:14:44] Console server started
-[2019/04/23 11:14:44] Server commands started
+[2019/04/23 11:26:41] Server powered on!
+[2019/04/23 11:26:41] Web server started
+[2019/04/23 11:26:41] Console server started
+[2019/04/23 11:26:41] Server commands started
+[2019/04/23 11:53:31] New web user request received on session: io.javalin.websocket.WsSession@344db6b5
+[2019/04/23 11:53:31] undef_877508277 changed status to not logined
+[2019/04/23 12:28:19] New web user request received on session: io.javalin.websocket.WsSession@4a89b88c
+[2019/04/23 12:28:19] undef_1250539660 changed status to not logined
