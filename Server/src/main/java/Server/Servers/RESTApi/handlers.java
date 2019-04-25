@@ -60,11 +60,11 @@ public class handlers {
         return outArr;
     }
 
-    static HashMap<Integer, User> pagList(Context ctx){
+    static HashMap<String, User> pagList(Context ctx){
         String userType = takeParam(ctx, "userType");
         String userStatus = takeParam(ctx, "userStatus");
-        HashMap<Integer, User> arrList = new HashMap<>();
-        for(Map.Entry<Integer, User> item : Server.getClientArr().entrySet()){
+        HashMap<String, User> arrList = new HashMap<>();
+        for(Map.Entry<String, User> item : Server.getClientArr().entrySet()){
             if (userType.equals(userTypes[0]) || userType.equals(userTypes[1])){
                 if(!userType.equals(item.getValue().getType())){
                     continue;
@@ -92,12 +92,12 @@ public class handlers {
 
     public static Handler allUsers = ctx ->{
         int[] pagLims = paginationCheck(ctx);
-        HashMap<Integer, User> userList = pagList(ctx);
+        HashMap<String, User> userList = pagList(ctx);
 
         JSONObject jsonOut = new JSONObject();
 
         int i = 1;
-        for(Map.Entry<Integer, User> item : userList.entrySet()){
+        for(Map.Entry<String, User> item : userList.entrySet()){
             if ((i > (pagLims[0] * pagLims[1] - pagLims[1]) && i < (pagLims[0] * pagLims[1] + 1))){
 //                userList.remove(item.getKey());
                 jsonOut.put(item.getKey().toString(), item.getValue().fullInfo());

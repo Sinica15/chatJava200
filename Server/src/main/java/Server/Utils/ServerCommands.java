@@ -20,7 +20,7 @@ public class ServerCommands extends Thread  {
             if (line.equals("list")){
                 System.out.println("==== clients list ====");
 
-                for(Map.Entry<Integer, User> item : Server.getClientArr().entrySet()){
+                for(Map.Entry<String, User> item : Server.getClientArr().entrySet()){
                     System.out.print(item.getValue().fullInfo());
                     System.out.println();
 //                    System.out.printf("Key: %s  Value: %s \n", item.getKey(), item.getValue().getFullName());

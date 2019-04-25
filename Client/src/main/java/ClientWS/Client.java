@@ -19,8 +19,8 @@ public class Client {
             WebSocketContainer container = ContainerProvider.getWebSocketContainer();
             String uri = "ws://localhost:9003/chat";
             System.out.println("Connecting to " + uri);
-            container.connectToServer(MyClientEndpoint.class, URI.create(uri));
-            messageLatch.await(100, TimeUnit.SECONDS);
+            container.connectToServer(ClientEndpoint.class, URI.create(uri));
+            messageLatch.await(600, TimeUnit.SECONDS);
         } catch (DeploymentException | InterruptedException | IOException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -14,18 +14,18 @@ public class Server {
     public static final String[] userTypes = {"client", "agent"};
     public static final String[] connectionTypes = {"Socket", "WebSocket"};
 
-    private static HashMap<Integer, User> clientArr = new HashMap<Integer, User>();
+    private static HashMap<String, User> clientArr = new HashMap<String, User>();
     protected static int i = 0;
 
-    public static HashMap<Integer, User> getClientArr(){
+    public static HashMap<String, User> getClientArr(){
         return clientArr;
     }
 
-    synchronized public static void addUser(int i, User user){
+    synchronized public static void addUser(String i, User user){
         clientArr.put(i, user);
     }
 
-    public static void removeUser(int i){
+    public static void removeUser(String i){
         clientArr.remove(i);
     }
 
@@ -42,8 +42,8 @@ public class Server {
         ServerWeb SWeb = new ServerWeb();
         SWeb.start();
 
-        ServerCons SCons = new ServerCons();
-        SCons.start();
+        //ServerCons SCons = new ServerCons();
+        //SCons.start();
 
         ServerCommands commands = new ServerCommands();
         commands.start();

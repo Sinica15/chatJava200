@@ -18,7 +18,7 @@ public class UserWS extends User{
     WsSession session;
 
     public UserWS(int id, String ConnectonType, WsSession session) {
-        super(session.hashCode(), ConnectonType);
+        super(session.getId(), ConnectonType);
         this.session = session;
         setStatus(userStatuses[0]);
     }

@@ -19,7 +19,7 @@ public class UserS extends User implements Runnable{
     DataInputStream dInpS;
     DataOutputStream dOutS;
 
-    public UserS(int id, String ConnectionType, Socket socket){
+    public UserS(String id, String ConnectionType, Socket socket){
         super(id, ConnectionType);
         isActive = true;
         this.socket = socket;

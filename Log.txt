@@ -1,8 +1,23 @@
-[2019/04/23 11:26:41] Server powered on!
-[2019/04/23 11:26:41] Web server started
-[2019/04/23 11:26:41] Console server started
-[2019/04/23 11:26:41] Server commands started
-[2019/04/23 11:53:31] New web user request received on session: io.javalin.websocket.WsSession@344db6b5
-[2019/04/23 11:53:31] undef_877508277 changed status to not logined
-[2019/04/23 12:28:19] New web user request received on session: io.javalin.websocket.WsSession@4a89b88c
-[2019/04/23 12:28:19] undef_1250539660 changed status to not logined
+[2019/04/26 01:27:13] Server powered on!
+[2019/04/26 01:27:13] Web server started
+[2019/04/26 01:27:13] Server commands started
+[2019/04/26 01:27:38] New web user request received on session: io.javalin.websocket.WsSession@526df5ca
+[2019/04/26 01:27:38] undef_fd0873b1-a074-4df7-8b55-3d586bf2fcfc changed status to not logined
+[2019/04/26 01:29:59] New web user request received on session: io.javalin.websocket.WsSession@70e573f7
+[2019/04/26 01:29:59] undef_95a6bf0f-a494-41b4-bb5a-c3d273725182 changed status to not logined
+[2019/04/26 01:34:11] New web user request received on session: io.javalin.websocket.WsSession@74daf933
+[2019/04/26 01:34:11] undef_2c9697f6-2c57-4a34-bb1b-67760bd8a5b0 changed status to not logined
+[2019/04/26 01:34:39] New web user request received on session: io.javalin.websocket.WsSession@659548b3
+[2019/04/26 01:34:39] undef_b6e02319-718f-4a60-96bd-c6bba2b9c48b changed status to not logined
+[2019/04/26 02:02:43] New web user request received on session: io.javalin.websocket.WsSession@11a86ca0
+[2019/04/26 02:02:43] undef_b9380aaf-75d0-4641-9c34-b6a9155ed284 changed status to not logined
+[2019/04/26 02:06:21] New web user request received on session: io.javalin.websocket.WsSession@48f4f3e6
+[2019/04/26 02:06:21] undef_ec25e5b4-3002-4d3b-b8b1-61426c14eaf3 changed status to not logined
+[2019/04/26 02:08:53] New web user request received on session: io.javalin.websocket.WsSession@17a6709a
+[2019/04/26 02:08:53] undef_3fb8833e-02ea-45a7-8b85-f5b55152b1d9 changed status to not logined
+[2019/04/26 02:11:42] New web user request received on session: io.javalin.websocket.WsSession@2294856c
+[2019/04/26 02:11:42] undef_12b5fa85-34ce-4f83-95bd-262953b35c39 changed status to not logined
+[2019/04/26 02:12:34] New web user request received on session: io.javalin.websocket.WsSession@d9d7d4a
+[2019/04/26 02:12:34] undef_f29fe018-5235-4a7f-b820-cbccc80bbeff changed status to not logined
+[2019/04/26 02:13:14] New web user request received on session: io.javalin.websocket.WsSession@2d9cfd21
+[2019/04/26 02:13:14] undef_ee1d438f-e9c0-4f86-ad1d-6b25326b3c1e changed status to not logined

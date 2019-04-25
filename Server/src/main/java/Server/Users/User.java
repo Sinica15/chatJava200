@@ -20,7 +20,7 @@ abstract public class User {
         }
     }
 
-    int id;
+    String id;
     String Name = "noname";
     String Type = "undef";
     String Status = userStatuses[0];
@@ -28,7 +28,7 @@ abstract public class User {
     User Interlocutor;
     ArrayList<String> clientMassages = new ArrayList<>();
 
-    public User(int id, String ConnectonType){
+    public User(String id, String ConnectonType){
         this.id = id;
         this.ConnectonType = ConnectonType;
     }
@@ -44,7 +44,7 @@ abstract public class User {
         return Status;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -120,7 +120,7 @@ abstract public class User {
     synchronized void lookingFor(String Type) {
         deb("lookingFor " + Type);
 
-        for (Map.Entry<Integer, User> item : getClientArr().entrySet()) {
+        for (Map.Entry<String, User> item : getClientArr().entrySet()) {
             if (item.getValue().getType().equals(Type) &&
                     item.getValue().getStatus().equals(userStatuses[3])) {
                 this.connectionWith(item.getValue());
@@ -163,7 +163,7 @@ abstract public class User {
     public void runMethod(String received){
         deb("runMethod " + received);
 
-        if (checkingForCommands(received)) return;
+        if (this.checkingForCommands(received)) return;
 
         //show user message
         if (this.getType().equals(userTypes[0]) ||

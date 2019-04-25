@@ -22,8 +22,8 @@ public class UserTest {
 
 //        UserWS spyWS1 = spy(new UserWS(0, "WebSocket", session));
 
-        UserS spyS1 = spy(new UserS(1, "Socket", s1));
-        UserS spyS2 = spy(new UserS(2, "Socket", s1));
+        UserS spyS1 = spy(new UserS( "1", "Socket", s1));
+        UserS spyS2 = spy(new UserS( "2", "Socket", s1));
 
 //        UserS spyS1 = mock(UserS.class);
 //        UserWS spyS2 = mock(UserWS.class);
@@ -60,8 +60,8 @@ public class UserTest {
 
         Socket s1 = mock(Socket.class);
 
-        UserS spyS1 = spy(new UserS(1, "Socket", s1));
-        UserS spyS2 = spy(new UserS(2, "Socket", s1));
+        UserS spyS1 = spy(new UserS( "1", "Socket", s1));
+        UserS spyS2 = spy(new UserS( "2", "Socket", s1));
 
         doNothing().when(spyS1).lookingFor(anyString());
         doNothing().when(spyS2).lookingFor(anyString());
@@ -93,8 +93,8 @@ public class UserTest {
 
         Socket s1 = mock(Socket.class);
 
-        UserS spyS1 = spy(new UserS(1, "Socket", s1));
-        UserS spyS2 = spy(new UserS(2, "Socket", s1));
+        UserS spyS1 = spy(new UserS( "1", "Socket", s1));
+        UserS spyS2 = spy(new UserS( "2", "Socket", s1));
 
         spyS1.setType(userTypes[0]);
         spyS2.setType(userTypes[1]);
@@ -122,8 +122,8 @@ public class UserTest {
 
         Socket s1 = mock(Socket.class);
 
-        UserS spyS1 = spy(new UserS(1, "Socket", s1));
-        UserS spyS2 = spy(new UserS(2, "Socket", s1));
+        UserS spyS1 = spy(new UserS( "1", "Socket", s1));
+        UserS spyS2 = spy(new UserS( "2", "Socket", s1));
 
         spyS1.setInterlocutor(spyS2);
         spyS2.setInterlocutor(spyS1);
@@ -143,8 +143,8 @@ public class UserTest {
 
         Socket s1 = mock(Socket.class);
 
-        UserS spyS1 = spy(new UserS(1, "Socket", s1));
-        UserS spyS2 = spy(new UserS(2, "Socket", s1));
+        UserS spyS1 = spy(new UserS( "1", "Socket", s1));
+        UserS spyS2 = spy(new UserS( "2", "Socket", s1));
 
         addUser(spyS1.getId(), spyS1);
         addUser(spyS2.getId(), spyS2);
@@ -163,8 +163,8 @@ public class UserTest {
 
         Socket s1 = mock(Socket.class);
 
-        UserS spyS1 = spy(new UserS(1, "Socket", s1));
-        UserS spyS2 = spy(new UserS(2, "Socket", s1));
+        UserS spyS1 = spy(new UserS( "1", "Socket", s1));
+        UserS spyS2 = spy(new UserS( "2", "Socket", s1));
 
         doNothing().when(spyS1).SendMsgToSelf(any(), any());
 

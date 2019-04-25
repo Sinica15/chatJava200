@@ -27,7 +27,7 @@ public class ServerCons extends Thread {
                 // Accept the incoming request
                 s = ss.accept();
                 timeLog("New user request received : " + s);
-                int i = getI();
+                String i = String.valueOf(getI());
                 UserS mtch = new UserS(i, "Socket", s);
                 // Create a new Thread with this object.
                 Thread t = new Thread(mtch);
