@@ -10,6 +10,8 @@ import java.util.Map;
 
 import static Server.Server.userStatuses;
 import static Server.Server.userTypes;
+import static Server.Utils.utils.debPrt;
+import static Server.Utils.utils.timeLog;
 
 public class UserS extends User implements Runnable{
 
@@ -27,7 +29,8 @@ public class UserS extends User implements Runnable{
             this.dInpS = new DataInputStream(socket.getInputStream());
             this.dOutS = new DataOutputStream(socket.getOutputStream());
         }catch (Exception e){
-            System.out.println(e);
+            e.printStackTrace();
+            timeLog(e.toString());
         }
     }
 
@@ -47,9 +50,14 @@ public class UserS extends User implements Runnable{
         try {
             this.dOutS.writeUTF(from + ": "+ msg);
         } catch (IOException e) {
-//            e.printStackTrace();
-            System.out.println("send msg err");
+            e.printStackTrace();
+            timeLog(e.toString());
         }
+    }
+
+    @Override
+    public void sendUserList (User user){
+
     }
 
     @Override
@@ -125,7 +133,7 @@ public class UserS extends User implements Runnable{
 
                 received = dInpS.readUTF();
 
-                runMethod(received);
+                runMethod(received, received);
 
             } catch (IOException e) {
                 disconnectingInterlocutors();

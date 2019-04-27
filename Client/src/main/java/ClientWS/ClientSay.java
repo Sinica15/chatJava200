@@ -36,7 +36,7 @@ public class ClientSay extends Thread {
                 Gson gson = new Gson();
                 String outMsg = gson.toJson(msg);
 
-                System.out.println(outMsg);
+//                System.out.println("outcoming msg " + outMsg);
 
                 try {
                     session.getBasicRemote().sendText(outMsg);
@@ -53,10 +53,10 @@ public class ClientSay extends Thread {
 
     }
 
-    HashMap<String, String> formingOut (String msgType, String action, String massage){
+    public static HashMap<String, String> formingOut (String msgType, String action, String message){
         HashMap<String, String> out = new HashMap<>();
 
-        if (massage.isEmpty() && msgType.equals("massage")){
+        if (message.isEmpty() && msgType.equals("message")){
             out.put("isEmpty", "true");
         }else {
             out.put("isEmpty", "false");
@@ -64,15 +64,23 @@ public class ClientSay extends Thread {
 
         out.put("msgType", msgType);
         out.put("action", action);
-        out.put("massage", massage);
+        out.put("message", message);
 
         if (action.equals("register")){
-            if (massage.indexOf(userTypes[0]) > 0){
-                out.put("massage", "0" + massage.substring(17));
+            if (message.indexOf(userTypes[0]) > 0){
+                if(message.length() > 16){
+                    out.put("message", "0 " + message.substring(17));
+                }else {
+                    out.put("message", "0 NoName");
+                }
             }
 
-            if (massage.indexOf(userTypes[1]) > 0){
-                out.put("massage", "1" + massage.substring(16));
+            if (message.indexOf(userTypes[1]) > 0){
+                if (message.length() > 15){
+                    out.put("message", "1 " + message.substring(16));
+                }else {
+                    out.put("message", "1 NoName");
+                }
             }
 
         }
@@ -86,10 +94,10 @@ public class ClientSay extends Thread {
 
         //check slash
         if (received.isEmpty()) {
-            return formingOut("massage","massage", "");
+            return formingOut("message","message", "");
         }
         if (received.charAt(0) != '/') {
-            return formingOut("massage", "massage", received);
+            return formingOut("message", "message", received);
         }
 
         //check register
@@ -114,7 +122,7 @@ public class ClientSay extends Thread {
             return formingOut("service", "exit", "");
         }
 
-        return formingOut("massage","massage", "");
+        return formingOut("message","message", "");
     }
 
 }

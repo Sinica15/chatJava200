@@ -13,13 +13,9 @@ import java.util.Map;
 import java.util.Objects;
 
 import static Server.Server.*;
+import static Server.Utils.utils.debPrt;
 
 public class handlers {
-
-    public static Handler hend1 = ctx -> {
-        System.out.println("hend1");
-        ctx.json("jopa");
-    };
 
     public static Handler hend3 = ctx -> {
 //        if(ctx.queryParam("kd").toString().equals("null")){
@@ -45,15 +41,15 @@ public class handlers {
         try{
             pageNumberInt = Integer.valueOf(pageNumber);
         }catch (Exception e){
-            System.out.println(e);
-            System.out.println("set default page number 1");
+            debPrt(e.toString());
+            debPrt("set default page number 1");
             pageNumberInt = 1;
         }
         try{
             pageSizeInt = Integer.valueOf(pageSize);
         }catch (Exception e){
-            System.out.println(e);
-            System.out.println("set default page size 10");
+            debPrt(e.toString());
+            debPrt("set default page size 10");
             pageSizeInt = 10;
         }
         int[] outArr = {pageNumberInt, pageSizeInt};
@@ -105,7 +101,7 @@ public class handlers {
             i++;
         }
 //        ctx.json("");
-        System.out.println(jsonOut);
+        debPrt(jsonOut.toString());
 
         String number = takeParam(ctx, "number");
         if (number.equals("true")){

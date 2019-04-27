@@ -9,13 +9,13 @@ import static Server.Server.*;
 import static Server.Server.userStatuses;
 import static Server.Server.userTypes;
 import static Server.Utils.logWrite.prt;
+import static Server.Utils.utils.debPrt;
 
 abstract public class User {
 
 
     public void deb(String str){
-        boolean deb = true;
-        if(deb){
+        if(DebMode){
             System.out.println( "[debMode] " + this.fullInfo() + ": " + str);
         }
     }
@@ -56,6 +56,14 @@ abstract public class User {
         this.Type = Type;
     }
 
+    public void setConnectonType(String connectonType){
+        this.ConnectonType = connectonType;
+    }
+
+    public String getConnectonType() {
+        return ConnectonType;
+    }
+
     public String fullInfo() {
         return String.valueOf(id) + " " + Type + " " + Name + " " + Status;
     }
@@ -78,9 +86,11 @@ abstract public class User {
         //connect
         this.setInterlocutor(interlocutor);
         interlocutor.setInterlocutor(this);
+
         //change status
         this.setStatus(userStatuses[2]);
         Interlocutor.setStatus(userStatuses[2]);
+
         //welcome msg
         this.SendMsgToSelf(Interlocutor.getName() + " found, you in chat!", "Server");
         this.SendMsgToInterloc((this.getName() + " found, you in chat!"));
@@ -129,8 +139,13 @@ abstract public class User {
         }
     }
 
+    abstract void sendUserList(User user);
+
     void disconnectingInterlocutors() {
         deb("disconnectingInterlocutors");
+
+        sendUserList(this);
+        sendUserList(this.Interlocutor);
 
         if (this.Type.equals(userTypes[0])) {
             this.setStatus(userStatuses[1]);
@@ -160,41 +175,45 @@ abstract public class User {
         removeUser(this.getId());
     }
 
-    public void runMethod(String received){
-        deb("runMethod " + received);
+    public void runMethod(String received, String message){
+        deb("runMethod " + message);
 
         if (this.checkingForCommands(received)) return;
 
         //show user message
-        if (this.getType().equals(userTypes[0]) ||
-            this.getType().equals(userTypes[1]) && this.getStatus().equals(userStatuses[2])){
-                this.SendMsgToSelf(received, this.getName());
+        if ((this.getType().equals(userTypes[0]) ||
+            this.getType().equals(userTypes[1]) && this.getStatus().equals(userStatuses[2])) &&
+            this.getConnectonType().equals("web")){
+            debPrt(this.getId() + " show user message");
+                this.SendMsgToSelf(message, this.getName());
         }
 
         //client change status on waiting
         if (this.Type.equals(userTypes[0]) && this.Status.equals(userStatuses[1])) {
-//                    System.out.println("look");
+            debPrt(this.getId() + " client change status on waiting");
             this.Status = userStatuses[3];
             this.lookingFor(userTypes[1]);
             if (this.Status.equals(userStatuses[3])) {
-                this.clientMassages.add(received);
+                this.clientMassages.add(message);
                 return;
             }
         }
 
         //write message of waiting client
         if (this.Type.equals(userTypes[0]) && this.Status.equals(userStatuses[3])) {
+            debPrt(this.getId() + " write message of waiting client");
             this.lookingFor(userTypes[1]);
             if (this.Status.equals(userStatuses[3])) {
-                this.clientMassages.add(received);
+                this.clientMassages.add(message);
                 return;
             }
         }
 
         //conversation
         if (Status.equals(userStatuses[2])) {
-            this.SendMsgToInterloc(received);
-            clientTimeLog(this.getName() + " to " + Interlocutor.getName() + " " + received);
+            debPrt(this.getId() + " conversation");
+            this.SendMsgToInterloc(message);
+            clientTimeLog(this.getName() + " to " + Interlocutor.getName() + " " + message);
         }
     }
 

@@ -6,7 +6,7 @@ import Server.Users.UserWS;
 import io.javalin.Javalin;
 
 import static Server.Server.*;
-import static Server.Utils.utils.timeLog;
+import static Server.Utils.utils.*;
 
 public class ServerWeb extends Thread {
     @Override
@@ -23,13 +23,15 @@ public class ServerWeb extends Thread {
                         addUser(session.getId(), new UserWS(i,"WebSocket", session));
                     });
                     ws.onClose((session, status, message) -> {
-                        System.out.println("close");
+                        debPrt("close");
                         removeUser(session.getId());
                     });
-                    ws.onMessage((session, message) -> {
+                    ws.onMessage((session, received) -> {
                         User user = getClientArr().get(session.getId());
-                        System.out.println(user.getName() + " " + message);
-                        user.runMethod(message);
+                        String message = String.valueOf(JSONtoHashMapStrStr(received).get("message"));
+                        debPrt(received);
+                        debPrt(user.getName() + " " + message);
+                        user.runMethod(received, message);
                     });
                     ws.onError((wsSession, throwable) -> System.out.println(throwable));
                 })

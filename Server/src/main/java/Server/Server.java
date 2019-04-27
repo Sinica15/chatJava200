@@ -14,6 +14,8 @@ public class Server {
     public static final String[] userTypes = {"client", "agent"};
     public static final String[] connectionTypes = {"Socket", "WebSocket"};
 
+    public static final boolean DebMode = true;
+
     private static HashMap<String, User> clientArr = new HashMap<String, User>();
     protected static int i = 0;
 

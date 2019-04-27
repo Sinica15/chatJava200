@@ -11,6 +11,8 @@ import java.util.Map;
 
 import static Server.Server.userStatuses;
 import static Server.Server.userTypes;
+import static Server.Utils.utils.JSONtoHashMapStrStr;
+import static Server.Utils.utils.debPrt;
 import static j2html.TagCreator.*;
 
 public class UserWS extends User{
@@ -23,55 +25,89 @@ public class UserWS extends User{
         setStatus(userStatuses[0]);
     }
 
-    private static String createHtmlMessageFromSender(String sender, String message) {
+    private String createHtmlMessageFromSender(String sender, String message) {
+        String article_class = "interlocutor_article";
+        if (sender.equals(this.getName())){
+            sender = "me";
+            article_class = "sender_article";
+        }
+        if (sender.equals("Server")){
+            article_class = "server_article";
+        }
         return article(
                 b(sender + " says:"),
                 span(attrs(".timestamp"), new SimpleDateFormat("HH:mm:ss").format(new Date())),
                 p(message)
-        ).render();
+        ).attr("class", article_class).render();
     }
 
     @Override
     public void SendMsgToSelf(String msg, String from) {
-        Map map = new HashMap<Integer, String>();
-        map.put(0 , this.getName());
+        Map map = new HashMap<String, String>();
+        map.put(this.getId() , this.getName() + " (" + this.getType() + ")");
         if (Interlocutor != null){
-            map.put(1 , Interlocutor.getName());
+            map.put(this.Interlocutor.getId() , this.Interlocutor.getName() +
+                    " (" + this.Interlocutor.getType() + ")");
         }
         session.send(
                 new JSONObject()
+                        .put("message", msg)
                         .put("userMessage", createHtmlMessageFromSender(from, msg))
                         .put("userlist", map.values()).toString()
         );
     }
 
     @Override
+    public void sendUserList (User user){
+        Map map = new HashMap<String, String>();
+        map.put(user.getId(), user.getName());
+        session.send(new JSONObject()
+                .put("userlist", map.values()).toString()
+        );
+    }
+
+    @Override
     public boolean registerUser(String str, int u) {
+        debPrt("registerUser " + str);
         String infAbtUser[] = str.split(" ");
-        if (!infAbtUser[1].equals("register")) return false;
-        this.Name = infAbtUser[2];
-        this.Type = userTypes[Integer.parseInt(infAbtUser[3])];
+//        if (!infAbtUser[1].equals("register")) return false;
+        if(infAbtUser.length > 1){
+            this.Name = infAbtUser[1];
+        }else {
+            this.Name = "incognito";
+        }
+        this.Type = userTypes[Integer.parseInt(infAbtUser[0])];
         this.setStatus(userStatuses[1]);
         return false;
     }
 
     @Override
     boolean checkingForCommands(String received) {
-        //checking for command
-        if(!received.split(" ")[0].equals("$%$$")) return false;
 
-        //extracting the keyword
-        String keyword = received.split(" ")[1];
+        HashMap receivedJSON = new HashMap<>(JSONtoHashMapStrStr(received));
+
+        //checking for command
+        if(receivedJSON.get("msgType").equals("message")) return false;
+
+        //extracting the action
+        String action = String.valueOf(receivedJSON.get("action"));
+//        String keyword = "ll";
+
+        //set connection type
+        if(action.equals("setConnectionType")){
+            this.setConnectonType(String.valueOf(receivedJSON.get("message")));
+        }
 
         //register
-        if(this.getStatus().equals(userStatuses[0]) && keyword.equals("register")){
-            this.registerUser(received, 0);
+        if(this.getStatus().equals(userStatuses[0]) && action.equals("register")){
+            debPrt("register " + this.getId());
+            this.registerUser(String.valueOf(receivedJSON.get("message")), 0);
             return true;
         }
 
         //leave
-        if(this.getStatus().equals(userStatuses[2]) && keyword.equals("leave")){
-            System.out.println(this.getName() + " leave");
+        if(this.getStatus().equals(userStatuses[2]) && action.equals("leave")){
+            debPrt(this.getName() + " leave");
             disconnectingInterlocutors();
             this.SendMsgToSelf("you leave chat with " + Interlocutor.getName(), "Server");
             Interlocutor.SendMsgToSelf( this.getName() + " leave chat with you", "Server");
@@ -79,16 +115,13 @@ public class UserWS extends User{
             return true;
         }
 
-
         //exit
-        if(keyword.equals("exit")){
-            System.out.println(this.getName() + " exit");
+        if(action.equals("exit")){
+            debPrt(this.getName() + " exit");
             disconnectingInterlocutors();
             usedDisconnect("exit");
             return true;
         }
-
-
 
         return false;
     }

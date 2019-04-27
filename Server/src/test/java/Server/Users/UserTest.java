@@ -171,8 +171,8 @@ public class UserTest {
         spyS1.setType(userTypes[0]);
         spyS1.setStatus(userStatuses[1]);
 
-        spyS1.runMethod("some text 1");
-        spyS1.runMethod("some text 1");
+        spyS1.runMethod("", "some text 1");
+        spyS1.runMethod("", "some text 1");
 
         System.out.println(spyS1.getStatus());
         System.out.println(spyS1.clientMassages.size());

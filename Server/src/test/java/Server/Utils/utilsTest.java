@@ -7,6 +7,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static Server.Utils.utils.debPrt;
 import static org.junit.Assert.*;
 
 public class utilsTest {
@@ -18,7 +19,8 @@ public class utilsTest {
             String strLine = br.readLine();
             return strLine;
         }catch (IOException e){
-            System.out.println("Ошибка");
+            e.printStackTrace();
+            utils.timeLog(e.toString());
         }
         return "";
     }

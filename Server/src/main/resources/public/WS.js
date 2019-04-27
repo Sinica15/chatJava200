@@ -5,6 +5,15 @@ let id = id => document.getElementById(id);
 
 let ws = new WebSocket("ws://" + location.hostname + ":" + location.port + "/chat");
 console.log("connected");
+
+ws.onopen = () => {
+    ws.send(
+    JSON.stringify({
+        msgType : "service",
+        action : "setConnectionType",
+        message : "web"
+    }));
+}
 ws.onmessage = msg => updateChat(msg);
 ws.onclose = () => alert("WebSocket connection closed");
 
@@ -21,13 +30,13 @@ id("register_button").addEventListener("click", () => {
   }
   if (id("userName").value.trim() != "" && id("agent").checked) {
     console.log("!register " + id("userName").value.trim() + " 1");
-    sendAndClear("1" + id("userName").value.trim(), "register");
+    sendAndClear("1 " + id("userName").value.trim(), "register");
     id("form_back").remove();
     return;
   }
   if (id("userName").value.trim() != "" && id("client").checked) {
     console.log("!register " + id("userName").value.trim() + " 0");
-    sendAndClear("0" + id("userName").value.trim(), "register");
+    sendAndClear("0 " + id("userName").value.trim(), "register");
     id("form_back").remove();
     return;
   }
@@ -42,25 +51,33 @@ id("exit_button").addEventListener("click", () => {
 });
 
 function sendAndClear(message, mode) {
-    mode = mode || "massage";
-    if (message !== "") {
+    mode = mode || "message";
+    if (message != "" || mode != "message") {
+        console.log("sending");
+
         let msgType;
-        if (mode == "massage"){
-            msgType = "massage";
+        if (mode == "message"){
+            msgType = "message";
         }else{
             msgType = "service";
         }
         ws.send(JSON.stringify({
             msgType : msgType,
             action : mode,
-            massage : massage
+            message : message
         }));
-        id("message").value = "";
+        if (mode == "message") {
+            id("message").value = "";
+        }
     }
 }
 
 function updateChat(msg) { // Update chat-panel and list of connected users
     let data = JSON.parse(msg.data);
-    id("chat").insertAdjacentHTML("afterbegin", data.userMessage);
-    id("userlist").innerHTML = data.userlist.map(user => "<li>" + user + "</li>").join("");
+    console.log(data);
+    if (data.userMessage != undefined){
+        id("chat").insertAdjacentHTML("afterbegin", data.userMessage);
+        id("userlist").innerHTML = data.userlist.map(user => "<li>" + user + "</li>").join("");
+    }
+
 }

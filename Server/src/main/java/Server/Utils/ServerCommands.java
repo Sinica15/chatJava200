@@ -29,32 +29,10 @@ public class ServerCommands extends Thread  {
                 System.out.println("======================");
 
             }
-            if (line.indexOf("kick ") >= 0){
-//                System.out.println("kick");
-                StringBuffer str = new StringBuffer(line.trim());
-                int id = Integer.parseInt(new String(str.delete(0, 4)).trim());
-                System.out.println(id);
 
-                Server.getClientArr().get(id);
+            //todo User kick
 
-                if (Server.getClientArr().get(id) != null){
-                    System.out.println("disconnect " + Server.getClientArr().get(id).fullInfo());
-                }
-
-//                for (int i = 0; i < Server.clientArr.length; i++){
-//                    if (Server.clientArr[i].getId() == id){
-//                        System.out.println("disconnect " + Server.clientArr[i].getFullName());
-//                    }
-//                }
-            }
-//            if (line.equals("stop")){
-//                System.out.println("try stopping");
-//                for (int i = 0; i < Server.clientArr.length; i++){
-//                    Server.clientArr[i].disable();
-//                }
-//                Server.servDisable();
-//                break;
-//            }
+            //todo Server stoping
         }
     }
 }
