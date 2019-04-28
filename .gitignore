@@ -5,3 +5,4 @@ chatJava20.iml
 /Client/Client.iml
 /Server/target
 /Server/Server.iml
+/Server/src/main/javascript/node_modules

@@ -26,18 +26,21 @@ public class UserWS extends User{
     }
 
     private String createHtmlMessageFromSender(String sender, String message) {
-        String article_class = "interlocutor_article";
+        String article_class = "interlocutor-article";
         if (sender.equals(this.getName())){
             sender = "me";
-            article_class = "sender_article";
+            article_class = "sender-article";
         }
         if (sender.equals("Server")){
-            article_class = "server_article";
+            article_class = "server-article";
         }
         return article(
-                b(sender + " says:"),
-                span(attrs(".timestamp"), new SimpleDateFormat("HH:mm:ss").format(new Date())),
-                p(message)
+                p(message),
+                p(
+                        span(sender + ", ").attr("class", "sender"),
+                        span(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()))
+                                .attr("class", "datetime")
+                ).attr("class", "sender-datetime")
         ).attr("class", article_class).render();
     }
 

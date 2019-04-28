@@ -25,29 +25,29 @@ id("message").addEventListener("keypress", function (e) {
 });
 id("send_button").addEventListener("click", () => sendAndClear(id("message").value));
 id("register_button").addEventListener("click", () => {
-  if(id("userName").value.trim() == ""){
-    alert("Name field can't be empty");
-  }
-  if (id("userName").value.trim() != "" && id("agent").checked) {
-    console.log("!register " + id("userName").value.trim() + " 1");
-    sendAndClear("1 " + id("userName").value.trim(), "register");
-    id("form_back").remove();
-    return;
-  }
-  if (id("userName").value.trim() != "" && id("client").checked) {
-    console.log("!register " + id("userName").value.trim() + " 0");
-    sendAndClear("0 " + id("userName").value.trim(), "register");
-    id("form_back").remove();
-    return;
-  }
+    if(id("userName").value.trim() == ""){
+        alert("Name field can't be empty");
+    }
+    if (id("userName").value.trim() != "" && id("agent").checked) {
+        console.log("!register " + id("userName").value.trim() + " 1");
+        sendAndClear("1 " + id("userName").value.trim(), "register");
+        id("form_back").remove();
+        return;
+    }
+    if (id("userName").value.trim() != "" && id("client").checked) {
+        console.log("!register " + id("userName").value.trim() + " 0");
+        sendAndClear("0 " + id("userName").value.trim(), "register");
+        id("form_back").remove();
+        return;
+    }
 });
 id("leave_button").addEventListener("click", () => {
-  console.log("!leave");
-  sendAndClear("", "leave");
+    console.log("!leave");
+    sendAndClear("", "leave");
 });
 id("exit_button").addEventListener("click", () => {
-  console.log("!exit");
-  sendAndClear("", "exit");
+    console.log("!exit");
+    sendAndClear("", "exit");
 });
 
 function sendAndClear(message, mode) {

@@ -1,13 +1,28 @@
-[2019/04/27 23:56:59] Server powered on!
-[2019/04/27 23:56:59] Web server started
-[2019/04/27 23:56:59] Server commands started
-[2019/04/27 23:57:11] New web user request received on session: io.javalin.websocket.WsSession@71582c84
-[2019/04/27 23:57:11] undef_d07ede95-35a2-40cd-b883-748bf0e8fe83 changed status to not logined
-[2019/04/27 23:57:11] New web user request received on session: io.javalin.websocket.WsSession@1131d1b9
-[2019/04/27 23:57:11] undef_af44b2ba-5d2c-4ebc-9c70-b134ecfb9cd2 changed status to not logined
-[2019/04/27 23:57:17] aaaaa changed status to waiting
-[2019/04/27 23:57:25] ccccc changed status to logined
-[2019/04/27 23:57:27] ccccc changed status to in conversation
-[2019/04/27 23:57:27] aaaaa changed status to in conversation
-[2019/04/27 23:57:27] ccccc in chat with aaaaa
-[2019/04/27 23:57:27] ccccc to aaaaa s
+[2019/04/28 05:17:11] Server powered on!
+[2019/04/28 05:17:11] Web server started
+[2019/04/28 05:17:11] Server commands started
+[2019/04/28 05:17:20] New web user request received on session: io.javalin.websocket.WsSession@34ecfdd1
+[2019/04/28 05:17:20] undef_853eea9c-7d52-4646-8f3a-4076bd0300f1 changed status to not logined
+[2019/04/28 05:17:31] Clq changed status to logined
+[2019/04/28 05:18:00] New web user request received on session: io.javalin.websocket.WsSession@79a85c96
+[2019/04/28 05:18:00] undef_b9e9ba2a-2106-4709-8a78-74516bf258fc changed status to not logined
+[2019/04/28 05:18:04] jjjj changed status to waiting
+[2019/04/28 05:18:04] jjjj changed status to in conversation
+[2019/04/28 05:18:04] Clq changed status to in conversation
+[2019/04/28 05:18:05] jjjj in chat with Clq
+[2019/04/28 05:18:05] jjjj to Clq Ggg
+[2019/04/28 05:18:05] jjjj to Clq Fgusvg
+[2019/04/28 05:18:13] Clq to jjjj Hi jopa
+[2019/04/28 05:18:23] jjjj to Clq hi popa
+[2019/04/28 05:18:50] jjjj changed status to waiting
+[2019/04/28 05:18:50] Clq changed status to logined
+[2019/04/28 05:18:50] jjjj exit
+[2019/04/28 05:19:15] New web user request received on session: io.javalin.websocket.WsSession@12e43322
+[2019/04/28 05:19:15] undef_cb243804-a643-4bf3-b80a-1a647c8a4b43 changed status to not logined
+[2019/04/28 05:19:31] hhh changed status to waiting
+[2019/04/28 05:19:31] hhh changed status to in conversation
+[2019/04/28 05:19:31] Clq changed status to in conversation
+[2019/04/28 05:19:31] hhh in chat with Clq
+[2019/04/28 05:19:31] hhh to Clq Hh
+[2019/04/28 05:19:40] Clq to hhh Hi hhh
+[2019/04/28 05:19:56] hhh to Clq hi clll
