@@ -17,7 +17,7 @@ import static j2html.TagCreator.*;
 
 public class UserWS extends User{
 
-    WsSession session;
+    transient WsSession session;
 
     public UserWS(int id, String ConnectonType, WsSession session) {
         super(session.getId(), ConnectonType);

@@ -25,7 +25,7 @@ abstract public class User {
     String Type = "undef";
     String Status = userStatuses[0];
     String ConnectonType;
-    User Interlocutor;
+    transient User Interlocutor;
     ArrayList<String> clientMassages = new ArrayList<>();
 
     public User(String id, String ConnectonType){
@@ -66,6 +66,10 @@ abstract public class User {
 
     public String fullInfo() {
         return String.valueOf(id) + " " + Type + " " + Name + " " + Status;
+    }
+
+    public User getInterlocutor() {
+        return Interlocutor;
     }
 
     public void setInterlocutor(User user){
