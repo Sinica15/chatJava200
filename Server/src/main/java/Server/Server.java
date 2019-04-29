@@ -1,6 +1,5 @@
 package Server;
 
-import Server.Servers.ServerCons;
 import Server.Servers.ServerWeb;
 import Server.Users.User;
 import Server.Utils.ServerCommands;
@@ -12,7 +11,7 @@ public class Server {
 
     public static final String[] userStatuses = {"not logined", "logined", "in conversation", "waiting"};
     public static final String[] userTypes = {"client", "agent"};
-    public static final String[] connectionTypes = {"Socket", "WebSocket"};
+    public static final String[] connectionTypes = {"Socket", "WebSocket", "REST"};
 
     public static final boolean DebMode = true;
 

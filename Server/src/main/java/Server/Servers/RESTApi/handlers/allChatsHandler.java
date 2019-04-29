@@ -4,7 +4,6 @@ import Server.Server;
 import Server.Users.User;
 import io.javalin.Context;
 import io.javalin.Handler;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,4 +40,7 @@ public class allChatsHandler {
     public static Handler allChats = ctx ->{
         ctx.result(requestResponse(ctx, chatCounter(ctx)));
     };
+
+    //rm clientMassages
+
 }

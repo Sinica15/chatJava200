@@ -1,25 +1,10 @@
-[2019/04/29 03:35:43] Server powered on!
-[2019/04/29 03:35:43] Web server started
-[2019/04/29 03:35:43] Server commands started
-[2019/04/29 03:35:49] New web user request received on session: io.javalin.websocket.WsSession@5f568cd6
-[2019/04/29 03:35:49] undef_97a379ba-f2f7-4a6c-a0fd-5fee015f35c4 changed status to not logined
-[2019/04/29 03:35:50] New web user request received on session: io.javalin.websocket.WsSession@1131d1b9
-[2019/04/29 03:35:50] undef_971b39ae-c179-4f8d-9f17-549bccb96bf8 changed status to not logined
-[2019/04/29 03:35:51] New web user request received on session: io.javalin.websocket.WsSession@6d5a3bd
-[2019/04/29 03:35:51] undef_60873e7b-5322-4471-9d33-52003b5bdddf changed status to not logined
-[2019/04/29 03:35:53] New web user request received on session: io.javalin.websocket.WsSession@19b7079e
-[2019/04/29 03:35:53] undef_6ca73596-dd3d-4b18-834d-b3fd921873b5 changed status to not logined
-[2019/04/29 03:35:57] aaaa changed status to waiting
-[2019/04/29 03:36:02] ssss changed status to logined
-[2019/04/29 03:36:05] ssss changed status to in conversation
-[2019/04/29 03:36:05] aaaa changed status to in conversation
-[2019/04/29 03:36:05] ssss in chat with aaaa
-[2019/04/29 03:36:05] ssss to aaaa sss
-[2019/04/29 03:36:07] New web user request received on session: io.javalin.websocket.WsSession@2433def6
-[2019/04/29 03:36:07] undef_729ea3f5-8d72-4b4b-a73a-cc6eee9395b3 changed status to not logined
-[2019/04/29 03:36:09] sss changed status to waiting
-[2019/04/29 03:36:16] dddd changed status to logined
-[2019/04/29 03:36:19] dddd changed status to in conversation
-[2019/04/29 03:36:19] sss changed status to in conversation
-[2019/04/29 03:36:19] dddd in chat with sss
-[2019/04/29 03:36:19] dddd to sss ddddasdads
+[2019/04/29 20:15:56] Server powered on!
+[2019/04/29 20:15:56] Web server started
+[2019/04/29 20:15:56] Server commands started
+[2019/04/29 20:16:05] agVasian changed status to waiting
+[2019/04/29 20:16:30] clPetia changed status to logined
+[2019/04/29 20:16:54] clPetia changed status to in conversation
+[2019/04/29 20:16:54] agVasian changed status to in conversation
+[2019/04/29 20:16:54] clPetia in chat with agVasian
+[2019/04/29 20:16:54] clPetia to agVasian 1222111
+[2019/04/29 20:17:02] clPetia to agVasian 122hkhkjh2111

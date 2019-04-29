@@ -3,12 +3,14 @@ package Server.Users;
 import Server.Server;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import static Server.Server.*;
 import static Server.Server.userStatuses;
 import static Server.Server.userTypes;
 import static Server.Utils.logWrite.prt;
+import static Server.Utils.utils.JSONtoHashMapStrStr;
 import static Server.Utils.utils.debPrt;
 
 abstract public class User {
@@ -82,6 +84,14 @@ abstract public class User {
 
     public void SendMsgToInterloc (String msg){
         this.Interlocutor.SendMsgToSelf(msg, this.getName());
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        Name = name;
     }
 
     void connectionWith(User interlocutor) {
@@ -221,9 +231,62 @@ abstract public class User {
         }
     }
 
+    boolean checkingForCommands(String received){
+        HashMap receivedJSON = new HashMap<>(JSONtoHashMapStrStr(received));
+
+        //checking for command
+        if(receivedJSON.get("msgType").equals("message")) return false;
+
+        //extracting the action
+        String action = String.valueOf(receivedJSON.get("action"));
+//        String keyword = "ll";
+
+        //set connection type
+        if(action.equals("setConnectionType")){
+            this.setConnectonType(String.valueOf(receivedJSON.get("message")));
+        }
+
+        //register
+        if(this.getStatus().equals(userStatuses[0]) && action.equals("register")){
+            debPrt("register " + this.getId());
+            this.registerUser(String.valueOf(receivedJSON.get("message")), 0);
+            return true;
+        }
+
+        //leave
+        if(this.getStatus().equals(userStatuses[2]) && action.equals("leave")){
+            debPrt(this.getName() + " leave");
+            disconnectingInterlocutors();
+            this.SendMsgToSelf("you leave chat with " + Interlocutor.getName(), "Server");
+            Interlocutor.SendMsgToSelf( this.getName() + " leave chat with you", "Server");
+            clientTimeLog(this.getName() + " leave chat with " + Interlocutor.getName());
+            return true;
+        }
+
+        //exit
+        if(action.equals("exit")){
+            debPrt(this.getName() + " exit");
+            disconnectingInterlocutors();
+            usedDisconnect("exit");
+            return true;
+        }
+
+        return false;
+    };
+
     abstract public void SendMsgToSelf(String msg, String from);
 
-    abstract public boolean registerUser(String str, int userType);
-
-    abstract boolean checkingForCommands(String received);
+    public boolean registerUser(String str, int userType){
+        debPrt("registerUser " + str);
+        String infAbtUser[] = str.split(" ");
+//        if (!infAbtUser[1].equals("register")) return false;
+        if(infAbtUser.length > 1){
+            this.Name = infAbtUser[1];
+        }else {
+            this.Name = "incognito";
+        }
+        this.Type = userTypes[Integer.parseInt(infAbtUser[0])];
+        this.setStatus(userStatuses[1]);
+        return false;
+    }
 }
