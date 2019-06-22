@@ -6,7 +6,6 @@ import com.google.gson.Gson;
 import io.javalin.Handler;
 
 import java.util.HashMap;
-import java.util.SplittableRandom;
 import java.util.UUID;
 
 import static Server.Server.*;
@@ -16,7 +15,6 @@ import static Server.Utils.utils.JSONtoHashMapStrStr;
 public class userWork {
 
     public static Handler registerUser = ctx ->{
-        System.out.println(ctx.body());
         HashMap<String, String> received = new HashMap<>(JSONtoHashMapStrStr(ctx.body()));
         String randomUUID;
         if (received.get("action").equals("register")) {
@@ -34,15 +32,14 @@ public class userWork {
         }
     };
 
-    public static Handler sendmsg = ctx ->{
+    public static Handler sendMsg = ctx ->{
         HashMap<String, String> received = new HashMap<>(JSONtoHashMapStrStr(ctx.body()));
         String userFromId = received.get("from");
         User user = getClientArr().get(userFromId);
         user.runMethod(ctx.body(), received.get("message"));
     };
 
-    public static Handler chekNewMsg = ctx ->{
-        System.out.println("lalala");
+    public static Handler checkNewMsg = ctx ->{
         String userId = takeParam(ctx, "userId");
 
         if(getClientArr().get(userId).getConnectonType().equals(connectionTypes[2])){
@@ -54,6 +51,7 @@ public class userWork {
     };
 
     public static Handler leave = ctx ->{
+        HashMap<String, String> received = new HashMap<>(JSONtoHashMapStrStr(ctx.body()));
         System.out.println(ctx.body());
         ctx.result(ctx.body() + "))");
     };

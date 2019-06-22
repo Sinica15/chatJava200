@@ -15,17 +15,6 @@ import static Server.Servers.RESTApi.handlers.forHandlers.*;
 
 public class allUsersHandler {
 
-    public static Handler hend3 = ctx -> {
-//        if(ctx.queryParam("kd").toString().equals("null")){
-//            System.out.println("empty");
-//        }
-        ctx.result(ctx.queryParam("id") + " " + ctx.queryParam("kd"));
-    };
-
-    public static Handler e = ctx ->{
-        ctx.json("");
-    };
-
     static HashMap<String, Object> pagList(Context ctx){
         HashMap<String, Object> arrList = new HashMap<>();
         String userType = takeParam(ctx, "userType");

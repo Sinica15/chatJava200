@@ -1,7 +1,6 @@
 package Server.Servers.RESTApi;
 
 import static Server.Servers.RESTApi.handlers.allChatsHandler.allChats;
-import static Server.Servers.RESTApi.handlers.allUsersHandler.hend3;
 
 import static Server.Servers.RESTApi.handlers.allUsersHandler.allUsers;
 import static Server.Servers.RESTApi.handlers.userWork.*;
@@ -18,12 +17,11 @@ public class routes {
             });
             path("userwork", () ->{
                 post("register", registerUser);
-                post("sendmsg" , sendmsg);
-                get("cheknewmsg" , chekNewMsg);
+                post("sendmsg" , sendMsg);
+                get("cheknewmsg" , checkNewMsg);
 
                 post("leave", leave);
             });
-            get(hend3);
         });
     }
 }

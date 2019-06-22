@@ -1,5 +1,6 @@
-import './style.css';
-import './regForm.css';
-import './chatArticls.css';
-import './userList.css';
-import './WS.js';
+import './css/style.css';
+import './css/regForm.css';
+import './css/chatArticls.css';
+import './css/userList.css';
+import './js/interfaceRender';
+import './js/WS.js';

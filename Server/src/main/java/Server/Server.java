@@ -9,7 +9,13 @@ import java.util.HashMap;
 
 public class Server {
 
-    public static final String[] userStatuses = {"not logined", "logined", "in conversation", "waiting"};
+    public static final String[] userStatuses = {
+            "not logined",
+            "logined",
+            "in conversation",
+            "waiting",
+            "with echoBot"
+    };
     public static final String[] userTypes = {"client", "agent"};
     public static final String[] connectionTypes = {"Socket", "WebSocket", "REST"};
 
@@ -42,9 +48,6 @@ public class Server {
 
         ServerWeb SWeb = new ServerWeb();
         SWeb.start();
-
-        //ServerCons SCons = new ServerCons();
-        //SCons.start();
 
         ServerCommands commands = new ServerCommands();
         commands.start();

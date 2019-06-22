@@ -19,7 +19,8 @@ ws.onclose = () => alert("WebSocket connection closed");
 
 // Add event listeners to button and input field
 id("message").addEventListener("keypress", function (e) {
-    if (e.keyCode === 13) { // Send message if enter is pressed in input field
+    if (e.keyCode === 13) {
+        // Send message if enter is pressed in input field
         sendAndClear(e.target.value);
     }
 });
